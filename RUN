@@ -1,0 +1,1 @@
+~/.virtualenvs/neubauer/bin/python manage.py runserver 127.0.0.1:62079 --settings=config.settings.local

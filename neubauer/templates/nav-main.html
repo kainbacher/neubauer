@@ -1,0 +1,40 @@
+{% load menu_tags %}
+{% for child in children %}
+<li
+    class="{% if child.selected %}active{% endif %} position-relative"
+    x-data="{ showSubNav: false }"
+    @mouseover.away = "showSubNav = false"
+    @mouseover = "showSubNav = true"
+>
+    <a
+        href="{{ child.attr.redirect_url|default:child.get_absolute_url }}"
+        class="d-flex align-items-center"
+        title="{{ child.get_menu_title }}"
+    >
+        {{ child.get_menu_title }}
+
+        {% if child.children %}
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            height="16px" width="16px" class="dropdown-icon"
+        >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+        {% endif %}
+    </a>
+
+    {% if child.children %}
+    <div
+        class="subnav position-absolute"
+        :class="{ 'd-flex': showSubNav, 'd-none' : !showSubNav }"
+    >
+        {% for child in child.children %}
+            <div class="{% if child.selected %}active{% endif %}{% if child.ancestor %}active{% endif %}{% if child.sibling %}sibling{% endif %}{% if child.descendant %}descendant{% endif %}">
+                <a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}" title="{{ child.get_menu_title }}">{{ child.get_menu_title }}</a>
+            </div>
+        {% endfor %}
+        </div>
+    {% endif %}
+
+
+</li>
+{% endfor %}

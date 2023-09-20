@@ -1,0 +1,9 @@
+{% load cms_tags sekizai_tags i18n menu_tags compress thumbnail static %}
+    <meta name="twitter:card" content="summary" />
+    {% page_url request.current_page as current_url %}
+    {% if current_url %}
+    <meta property="og:url" content="https://www.kirchmann-rohrtechnik.at{% page_url request.current_page %}{% block extra_cannonical_url %}{% endblock %}" />
+    {% endif %}
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{% block extra_title %}{% endblock extra_title %}{% page_attribute page_title %} - Rohrtechnik Kirchmann" />
+    <meta property="og:description" content="{% block page_description %}{% page_attribute meta_description %}{% endblock page_description %}" />

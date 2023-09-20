@@ -1,0 +1,49 @@
+{% load cms_tags sekizai_tags i18n menu_tags compress thumbnail static %}
+<footer class="footer pt-1 pt-md-4 pb-1 pb-md-2">
+    <div class="container mt-2">
+
+        <div class="row">
+            <div class="footer-logo col-8 col-md-2 mb-2 mb-md-0">
+                <a href="/" title="Dr. Neubauer" class="d-block mb-2">
+                    {% include 'logo.html' %}
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <div>
+                    {% static_placeholder "footer_column_1" %}
+                </div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div>
+                    {% static_placeholder "footer_column_2" %}
+                </div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div>
+                    {% static_placeholder "footer_column_3" %}
+                </div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div>
+                    {% static_placeholder "footer_column_4" %}
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-line row mt-2 mt-md-4 mb-2 mb-md-0">
+            <div class="col-12">
+                <hr class="line" />
+            </div>
+            <div class="col-12 col-md-6">
+                <p>&copy; {% now "Y" %}, Zahnarztpraxis Dr. Georg Neubauer</p>
+            </div>
+            <div class="col-12 col-md-6 text-md-end">
+                {% static_placeholder "footer_line" %}
+            </div>
+        </div>
+
+    </div>
+</footer>

@@ -1,0 +1,45 @@
+<ul class="pagination">
+
+    {% if has_previous %}
+        <li class="page-item">
+            <a href="?page={{ page_obj.previous_page_number }}" class="page-link">ZURÜCK</a>
+        </li>
+    {% endif %}
+
+    {% if show_first %}
+        <li class="page-item">
+            <a href="?page=1" class="page-link">1</a>
+        </li>
+        <li class="disabled page-item">
+            <a href="" class="page-link">...</a>
+        </li>
+    {% endif %}
+
+    {% for linkpage in page_numbers %}
+        {% ifequal linkpage page %}
+            <li class="disabled page-item">
+                <a href="" class="page-link">{{ page }}</a>
+            </li>
+        {% else %}
+        <li class="page-item">
+            <a href="?page={{ linkpage }}" class="page-link">{{ linkpage }}</a>
+        </li>
+        {% endifequal %}
+    {% endfor %}
+
+    {% if show_last %}
+        <li class="disabled page-item">
+            <a href="" class="page-link">...</a>
+        </li>
+        <li class="page-item">
+            <a href="?page=last" class="page-link">{{ pages }}</a>
+        </li>
+    {% endif %}
+
+    {% if has_next %}
+        <li class="page-item">
+            <a href="?page={{ page_obj.next_page_number }}" class="page-link">WEITER</a>
+        </li>
+    {% endif %}
+
+</ul>

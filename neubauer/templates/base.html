@@ -1,0 +1,229 @@
+{% load cms_tags sekizai_tags i18n menu_tags compress thumbnail static %}{% get_current_language as LANGUAGE_CODE %}<!DOCTYPE html>
+<!--[if lt IE 7]>      <html itemscope itemtype="http://schema.org/LocalBusiness" lang="{{ LANGUAGE_CODE|default:'en-gb' }}" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html itemscope itemtype="http://schema.org/LocalBusiness" lang="{{ LANGUAGE_CODE|default:'en-gb' }}" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html itemscope itemtype="http://schema.org/LocalBusiness" lang="{{ LANGUAGE_CODE|default:'en-gb' }}" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 11]><!--><html itemscope itemtype="http://schema.org/LocalBusiness" lang="{{ LANGUAGE_CODE|default:'en-gb' }}" class="no-js"><!--<![endif]-->
+<head prefix="dcterms: http://purl.org/dc/terms/#">
+    <meta charset="UTF-8" />
+    <!--
+        ———————————————————————————————————————————————————————————————————————————————
+        Design & Code:
+        www.kainbacher.io - DIGITALE INSZENIERUNG
+        ———————————————————————————————————————————————————————————————————————————————
+    -->
+    {% include 'truendo.html' %}
+    {% include "gtag_head.html" %}
+    {% comment %} Google Search Console Tag zum verifizieren {% endcomment %}
+    <meta name="google-site-verification" content="0srVcSEvhjWBX7QV3ozSNAjJqlfl1efN0QgHWlGNM9U" />
+    <title>{% block extra_title %}{% endblock extra_title %}{% page_attribute page_title %} - Zahnarztpraxis Dr. Georg Neubauer</title>
+    <meta name="description" content="{% block page_description %}{% page_attribute meta_description %}{% endblock page_description %}"/>
+    <meta name="author" content="Zahnarztpraxis Dr. Georg Neubauer" />
+    <meta name="revisit-after" content="10 days" />
+    <meta name="robots" content="index, follow" />
+
+    {# Emit a 'canonical' tag when the page is displayed on an alternate url #}
+    {% page_url request.current_page as current_url %}
+    {% if current_url %}<link rel="canonical" href="https://www.dr-neubauer.at{% page_url request.current_page %}{% block extra_cannonical_url %}{% endblock %}">{% endif %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include "favicon.html" %}
+    {% include "meta_dublincore.html" %}
+    {% include "meta_socialmediacards.html" %}
+    {% block extra_meta %}{% endblock %}
+    {% render_block "css" %}
+    <link href="{% static 'swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
+    {% compress css %}
+    <link href="{% static 'css/styles.min.css' %}" rel="stylesheet" />
+    {% endcompress %}
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body class="page-{% page_attribute 'slug' %}"
+x-data="{ showMobileNav: false }"
+>
+{% cms_toolbar %}
+{% include "gtag_head.html" %}
+{% include "header.html" %}
+
+<main x-show="!showMobileNav">
+
+    <div class="hero" style="background-image: url('{% static 'images/testbild.png' %}')">
+        <div class="container hero-container">
+            <div class="row min-vh-100">
+                <div class="col-12 col-md-6 hero-col">
+                    <div class="hero-title">
+                        <h1>Wir solgern für Ihre Zahngesundheit</h1>
+                        <h2>Damit Sie unbeschwert lächeln können.</h2>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 hero-col justify-content-end">
+
+                    <a href="#" title="" class="badge-job">
+                        <div class="badge-job-icon">
+                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_246_592)">
+                                    <path d="M22 10.0834C20.031 9.00904 17.2645 7.33337 14.6667 7.33337C10.8167 7.33337 7.33337 9.61954 7.33337 16.5C7.33337 25.4815 9.26937 31.9184 12.2302 35.8179C13.2807 37.2039 15.8419 36.773 16.9364 35.3852C17.666 34.4594 18.4379 32.747 19.25 30.25C19.7854 28.8365 20.8854 27.4927 22 27.5C23.1037 27.5 24.2184 28.8512 24.75 30.25C25.5622 32.747 26.334 34.4575 27.0637 35.3834C28.1582 36.7749 30.7304 37.2039 31.7699 35.8179C34.7307 31.9184 36.6667 25.4834 36.6667 16.5C36.6667 9.64337 33.1687 7.33337 29.3334 7.33337C26.7245 7.33337 23.98 9.00354 22 10.0834Z" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M22 10.0834L27.5 12.8334" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="badge-job-text">
+                            <span class="badge-job-text-top">Wir suchen dich!</span>
+                            <span class="badge-job-text-bottom">Zahnarzt Assistentin</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block base_content %}
+    {% endblock base_content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <a href="#" class="card" title="title">
+                    <h4 class="card-title">Title</h4>
+                    <p>{% lorem 1 random %}</p>
+                    <img src="{% static 'images/testbild.png' %}" alt="Title" class="img-fluid" />
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="#" class="card" title="title">
+                    <h4 class="card-title">Title</h4>
+                    <p>{% lorem 1 random %}</p>
+                    <img src="{% static 'images/testbild.png' %}" alt="Title" class="img-fluid" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-12">
+
+                <div class="form-opinion">
+                    <div class="row mb-2">
+                        <div class="col-12">
+                            <h4>Ihre Meinung ist uns wichtig!</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <p>Wir sind dankbar für Ihre Bewertung unserer Zahnarztpraxis. Sie können und auf Google, Facebook oder direkt auf unserer Website bewerten. Vielen Dank für Ihre Bemühungen!</p>
+                            <div class="mb-2">
+                                <a href="#" class="btn btn-primary rounded-pill">Facebook Bewertung</a>
+                                <a href="#" class="btn btn-primary rounded-pill">Google Berwertung</a>
+                            </div>
+                            <img src="{% static 'images/testbild.png' %}" alt="Title" class="img-fluid rounded-32" />
+                        </div>
+                        <div class="col-12 col-md-8 px-0 px-8">
+                            <h5 class="mb-2">Direkte Empfehlung</h5>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="mb-1">
+                                        <label for="exampleInputEmail1" class="form-label">Name</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-1">
+                                        <label for="exampleInputEmail1" class="form-label">E-Mail</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-1">
+                                        <label for="exampleInputEmail1" class="form-label">Würden Sie uns weiterempfehlen?</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Ja
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Nein
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="mb-1">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                    </div>
+                                    <div class="mb-1 form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Default checkbox
+                                        </label>
+                                    </div>
+                                    <div class="mb-1">
+                                        <a href="#" class="btn btn-primary rounded-pill">Absenden</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-12">
+
+                <div class="contact-block">
+                    <div class="row">
+                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                            <div>
+                                <h4>Kontaktieren Sie uns.</h4>
+                                <div class="mb-2">
+                                    <a href="tel:+43552564772" class="btn btn-primary rounded-pill">+43 5525 64772</a>
+                                    <a href="mailto:info@dr-neubauer.at" class="btn btn-primary rounded-pill">info@dr-neubauer.at</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <img src="{% static 'images/testbild.png' %}" alt="Title" class="img-fluid rounded-32" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+{% include "footer.html" %}
+
+{% render_block "modal" %}
+{% render_block "js" %}
+{% comment %} <script src="{% static 'swiper/swiper-bundle.min.js' %}"></script> {% endcomment %}
+<script src="{% static 'js/alpinejs-3.12.3.js' %}"></script>
+{% compress js %}
+{% comment %} <script src="{% static 'js/main.js' %}"></script> {% endcomment %}
+{% endcompress %}
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Zahnarztpraxis Dr. Georg Neubauer",
+        "url": "https://www.dr-neubauer.at/",
+        "address": "Gesundheitspark Walgau, Bundesstraße 47, 6710 Nenzing, Vorarlberg / Österreich",
+        "email": "office@dr-neubauer.at",
+        "telephone": "+43 000 000 000",
+        "sameAs": [
+        "https://www.instagram.com/",
+        "https://www.linkedin.com/company/",
+        "https://www.facebook.com/"
+        ]
+    }
+</script>
+</body>
+</html>

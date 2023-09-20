@@ -1,0 +1,415 @@
+@import "_bootstrap";
+@import "_mixins";
+
+::-moz-selection {
+    background: $primary; /* WebKit/Blink Browsers */
+    color: $white;
+}
+
+::selection {
+    background: $primary; /* WebKit/Blink Browsers */
+    color: $white;
+}
+
+::-moz-selection {
+    background: $primary; /* Gecko Browsers */
+    color: $white;
+}
+
+$hamburger-padding-x           : 15px !default;
+$hamburger-padding-y           : 15px !default;
+$hamburger-layer-width         : 32px !default;
+$hamburger-layer-height        : 3px !default;
+$hamburger-layer-spacing       : 6px !default;
+$hamburger-layer-color         : $blue-500 !default;
+$hamburger-layer-border-radius : 4px !default;
+$hamburger-hover-opacity       : 0.7 !default;
+$hamburger-active-layer-color  : $hamburger-layer-color !default;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity !default;
+@import "../../../public/static/bower_components/css-hamburgers/_sass/hamburgers/hamburgers.scss";
+
+.hamburger {
+    outline: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+// base
+// ---------------------------------------------------------------------------
+body {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+a {
+    @include ease;
+}
+
+.btn {
+    @include ease;
+}
+
+img.right {
+    float: right;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// bootstrap
+// ---------------------------------------------------------------------------
+.btn-primary {
+    @include button-variant($red-500, $red-500, $white, $red-600, $red-600, $white);
+}
+
+.btn-outline-primary {
+    @include button-variant(transparent, $red-500, $red-500, $red-100, $red-600, $red-600);
+}
+
+.btn-outline-white {
+    @include button-variant(transparent, $white, $white, transparent, $red-200, $red-200);
+}
+
+.modal.show {
+    display: block !important;
+}
+
+.rounded-32 {
+    border-radius: 32px;
+}
+
+.prehaeder {
+    color: $gray-300;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.48px;
+}
+
+// header
+// ---------------------------------------------------------------------------
+header {
+    position: fixed;
+    width: 100vw;
+    z-index: 9;
+
+    .header {
+        background-color: $white;
+        border-radius: 230px;
+        box-shadow: 2px 2px 40px 0px rgba(0, 0, 0, 0.08);
+        margin-bottom: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 16px;
+        max-width: 1340px;
+        padding-bottom: 16px;
+        padding-top: 16px;
+    }
+
+    .navbar-nav {
+        li {
+            padding-left: 16px;
+            padding-right: 16px;
+
+            a {
+                color: $gray-900;
+                padding-bottom: 8px;
+                padding-top: 8px;
+                text-decoration: none;
+
+                &:hover {
+                    color: $red-500;
+                }
+            }
+        }
+        li.active {
+            a {
+                color: $red-500;
+            }
+        }
+
+        .dropdown-icon {
+            margin-left: 4px;
+        }
+
+        .subnav {
+            background-color: $white;
+            box-shadow: $box-shadow-lg;
+            border-radius: $border-radius-lg;
+            display: none;
+            flex-direction: column;
+            padding-top: $spacer;
+            padding-bottom: $spacer;
+            margin-left: - $spacer * 2;
+            z-index: 10;
+
+            div {
+                padding-left: $spacer;
+                padding-right: $spacer;
+
+                a {
+                    border-radius: $border-radius-lg;
+                    color: $gray-800;
+                    display: block;
+                    padding-left: $spacer;
+                    padding-right: $spacer;
+                    white-space: nowrap;
+
+                    &:hover {
+                        background-color: $red-500;
+                        color: $red-100;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.mobile-nav {
+    background: $red-500;
+    display: none;
+    flex-direction: column;
+    height: 100vh;
+    position : fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+
+    &-top {
+        margin-bottom: 32px;
+        margin-top: 32px;
+
+        a {
+            color: $white;
+        }
+    }
+
+    &-body {
+        overflow-y: scroll;
+        margin-top: 32px;
+        margin-bottom: 64px;
+
+        a {
+            border-bottom: 1px solid $red-400;
+            color: $white;
+            display: block;
+            text-decoration: none;
+            font-size: 24px;
+            padding-left: $spacer;
+            padding-right: $spacer;
+            padding-bottom: 8px;
+            padding-top: 8px;
+        }
+
+        a.sub {
+            padding-left: $spacer * 3;
+            padding-right: $spacer * 3;
+        }
+    }
+}
+
+// main
+// ---------------------------------------------------------------------------
+main {
+    z-index: 1;
+}
+
+// footer
+// ---------------------------------------------------------------------------
+footer {
+    background-color: $white;
+
+    p {
+        color: $gray-500;
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    a {
+        color: $gray-500;
+        font-size: 14px;
+        margin-bottom: 0;
+        text-decoration: none;
+
+        &:hover {
+            color: $red-200;
+        }
+    }
+
+    .line {
+    }
+}
+
+// wrapper
+// ---------------------------------------------------------------------------
+.wrapper-red {
+    background-color: $red-500;
+
+    h1,h2,h3,h4,h5,h6,p {
+        color: $white;
+    }
+
+    a {
+        color: $white;
+
+        &:hover {
+            color: $red-200;
+        }
+    }
+}
+
+// hero
+// ---------------------------------------------------------------------------
+.hero {
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+
+    &-container {
+        min-height: 100vh;
+    }
+
+    &-col {
+        align-items: flex-end;
+        display: flex;
+        padding-bottom: 32px;
+    }
+
+    h1 {
+        color: $red-500;
+        font-size: 64px;
+    }
+    h2 {
+        color: $gray-900;
+        font-size: 48px;
+    }
+}
+
+// badge-jobs
+// ---------------------------------------------------------------------------
+.badge-job {
+    align-items: center;
+    background-color: $white;
+    border-radius: 96px;
+    display: flex;
+    height: 96px;
+    justify-content: center;
+    padding: 16px;
+    text-decoration: none;
+
+    &-icon {
+        background-color: $red-500;
+        border-radius: 50%;
+        border-color: rgba($red-500, 0.2);
+        height: 64px;
+        width: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+        padding-left: 16px;
+        padding-right: 16px;
+
+        &-top {
+            color: $gray-400;
+            font-size: 24px;
+        }
+        &-bottom {
+            color: $gray-900;
+            font-size: 33px;
+        }
+    }
+}
+
+// card
+// ---------------------------------------------------------------------------
+a.card {
+    @include ease-slow;
+
+    border-radius: 32px;
+    border: 0px;
+    background-color: $white;
+    box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.12);
+    padding: 32px;
+    text-decoration: none;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    h4 {
+        color: var(--gray-900, #141414);
+        font-family: Inter;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.64px;
+    }
+
+    p {
+        color: var(--gray-900, #141414);
+        font-family: Inter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 28.8px */
+        letter-spacing: 0.36px;
+    }
+
+    img {
+        border-radius: 32px;
+    }
+}
+
+// Form opinion
+// ---------------------------------------------------------------------------
+.form-opinion {
+    border-radius: 32px;
+    border: 1px solid #EFEFEF;
+    background: linear-gradient(180deg, rgba(244, 244, 244, 0.40) 0%, rgba(235, 235, 235, 0.00) 100%);
+    padding: 64px;
+
+    h4 {
+        color: $black;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.8px;
+    }
+}
+
+// contact block
+// ---------------------------------------------------------------------------
+.contact-block {
+    border-radius: 32px;
+    border: 1px solid #EFEFEF;
+    background: linear-gradient(180deg, rgba(244, 244, 244, 0.40) 0%, rgba(235, 235, 235, 0.00) 100%);
+    padding: 64px;
+    display: flex;
+
+    h4 {
+        color: #000;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.8px;
+    }
+}

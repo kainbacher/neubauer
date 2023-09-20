@@ -1,0 +1,15 @@
+@mixin ease {
+    -moz-transition: -moz-transform 0.3s ease;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    -o-transition: -o-transform 0.3s ease;
+    -ms-transition: -ms-transform 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+@mixin ease-slow {
+    -moz-transition: -moz-transform 1s ease;
+    -webkit-transition: -webkit-transform 1s ease;
+    -o-transition: -o-transform 1s ease;
+    -ms-transition: -ms-transform 1s ease;
+    transition: all 1s ease;
+}

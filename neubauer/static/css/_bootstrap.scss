@@ -1,0 +1,52 @@
+/*!
+ * Bootstrap v5.0.1 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+// scss-docs-start import-stack
+// Configuration
+@import "../../../public/static/bower_components/bootstrap/scss/functions";
+@import "variables";
+@import "../../../public/static/bower_components/bootstrap/scss/mixins";
+@import "../../../public/static/bower_components/bootstrap/scss/utilities";
+
+// Layout & components
+@import "../../../public/static/bower_components/bootstrap/scss/root";
+@import "../../../public/static/bower_components/bootstrap/scss/reboot";
+@import "../../../public/static/bower_components/bootstrap/scss/type";
+@import "../../../public/static/bower_components/bootstrap/scss/images";
+@import "../../../public/static/bower_components/bootstrap/scss/containers";
+@import "../../../public/static/bower_components/bootstrap/scss/grid";
+@import "../../../public/static/bower_components/bootstrap/scss/tables";
+@import "../../../public/static/bower_components/bootstrap/scss/forms";
+@import "../../../public/static/bower_components/bootstrap/scss/buttons";
+@import "../../../public/static/bower_components/bootstrap/scss/transitions";
+@import "../../../public/static/bower_components/bootstrap/scss/dropdown";
+@import "../../../public/static/bower_components/bootstrap/scss/button-group";
+@import "../../../public/static/bower_components/bootstrap/scss/nav";
+@import "../../../public/static/bower_components/bootstrap/scss/navbar";
+@import "../../../public/static/bower_components/bootstrap/scss/card";
+@import "../../../public/static/bower_components/bootstrap/scss/accordion";
+@import "../../../public/static/bower_components/bootstrap/scss/breadcrumb";
+@import "../../../public/static/bower_components/bootstrap/scss/pagination";
+@import "../../../public/static/bower_components/bootstrap/scss/badge";
+@import "../../../public/static/bower_components/bootstrap/scss/alert";
+@import "../../../public/static/bower_components/bootstrap/scss/progress";
+@import "../../../public/static/bower_components/bootstrap/scss/list-group";
+@import "../../../public/static/bower_components/bootstrap/scss/close";
+@import "../../../public/static/bower_components/bootstrap/scss/toasts";
+@import "../../../public/static/bower_components/bootstrap/scss/modal";
+@import "../../../public/static/bower_components/bootstrap/scss/tooltip";
+@import "../../../public/static/bower_components/bootstrap/scss/popover";
+@import "../../../public/static/bower_components/bootstrap/scss/carousel";
+@import "../../../public/static/bower_components/bootstrap/scss/spinners";
+@import "../../../public/static/bower_components/bootstrap/scss/offcanvas";
+
+// Helpers
+@import "../../../public/static/bower_components/bootstrap/scss/helpers";
+
+// Utilities
+@import "../../../public/static/bower_components/bootstrap/scss/utilities/api";
+// scss-docs-end import-stack

@@ -1,0 +1,5 @@
+{% load cms_tags sekizai_tags i18n %}
+    <meta property="dcterms:title" content="{% block extra_title %}{% endblock extra_title %}{% page_attribute page_title %}" />
+    <meta property="dcterms:publisher" content="Rohrtechnik Kirchmann" />
+    <meta property="dcterms:description" content="{% page_attribute meta_description %}" />
+    <meta property="dcterms:language" content="{{ LANGUAGE_CODE }}" />

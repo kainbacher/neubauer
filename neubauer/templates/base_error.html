@@ -1,0 +1,40 @@
+{% load cms_tags sekizai_tags i18n static menu_tags compress thumbnail %}{% get_current_language as LANGUAGE_CODE %}<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" itemscope itemtype="http://schema.org/LocalBusiness">
+<head prefix="dcterms: http://purl.org/dc/terms/#">
+    <!--
+    ———————————————————————————————————————————————————————————————————————————————
+    Design & Code:
+    www.kainbacher.io - DIGITALE INSZENIERUNG
+    ———————————————————————————————————————————————————————————————————————————————
+    -->
+    <title>Fehler - Rohrtechnik Kirchmann</title>
+    <meta http-equiv="refresh" content="3; URL=/">
+    {% include "favicon.html" %}
+    {% include "meta_dublincore.html" %}
+    {% render_block "css" %}
+    <link href="{% static 'css/styles.min.css' %}" rel="stylesheet" />
+    {% render_block "js" %}
+    {% include "google_analytics.html" %}
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 offset-sm-4">
+
+                    <div class="error-box text-center">
+                        <div class="logo-error pt-5 mt-5 mb-5">
+                            <h1>
+                                <a href="/" title=" - Home">
+                                    {% include 'logo.html' %}
+                                </a>
+                            </h1>
+                        </div>
+                        {% block content %}{% endblock %}
+                        <a class="btn btn-primary mt-3" href="/">{% trans "Startpage" %}</a>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

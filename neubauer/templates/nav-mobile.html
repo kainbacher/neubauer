@@ -1,0 +1,23 @@
+{% load menu_tags %}
+{% for child in children %}
+    <a
+        href="{{ child.attr.redirect_url|default:child.get_absolute_url }}"
+        class="{% if child.selected %}active{% endif %}"
+        title="{{ child.get_menu_title }}"
+    >
+        {{ child.get_menu_title }}
+    </a>
+
+    {% if child.children %}
+        {% for child in child.children %}
+        <a
+            class="sub {% if child.selected %}active{% endif %}{% if child.ancestor %}active{% endif %}"
+            href="{{ child.attr.redirect_url|default:child.get_absolute_url }}"
+            title="{{ child.get_menu_title }}"
+        >
+            {{ child.get_menu_title }}
+        </a>
+        {% endfor %}
+    {% endif %}
+
+{% endfor %}

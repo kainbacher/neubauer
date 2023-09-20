@@ -1,0 +1,82 @@
+{% load cms_tags sekizai_tags i18n menu_tags compress thumbnail static %}
+<header>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-3 col-xl-2 col-xxl-3 pe-lg-4">
+                    <a class="navbar-brand" href="/" title="Rohrtechnik Kirchmann">
+                        {% include 'logo.html' %}
+                    </a>
+                </div>
+                <nav class="header-nav col-4 col-lg-6 col-xxl-7 d-none d-xl-flex">
+                    <div class="collapse navbar-collapse d-flex justify-content-center" id="navbar-main">
+                        <ul class="navbar-nav align-items-center d-flex flex-row">
+                            {% show_menu 0 100 100 100 'nav-main.html' %}
+                        </ul>
+                    </div>
+                </nav>
+                <div class="header-mailto col-lg-2 d-none d-xl-flex justify-content-end">
+                    <div class="d-flex justify-content-center align-items-center gap-1">
+                        <a href="mailto:office@kirchmann-rohrtechnik.at" title="E-Mail schreiben" class="btn btn-primary rounded-pill">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" height="24" width="24">
+                                <path stroke-linecap="round" d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" />
+                            </svg>
+                            Termin vereinbaren
+                        </a>
+                    </div>
+                </div>
+                <div class="header-phone col-6 col-lg-8 d-flex justify-content-end d-xl-none">
+                    <div class="d-flex justify-content-center align-items-center me-1">
+                        <a href="tel:+4355754789" title="Anrufen" class="btn btn-primary rounded-pill">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" height="24" width="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <a href="#" x-on:click="showMobileNav = !showMobileNav" class="d-flex align-items-center">
+                        <svg height="40" width="40" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path  stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav
+    class="mobile-nav"
+    :class="{ 'd-flex': showMobileNav, 'd-none' : !showMobileNav }"
+>
+    <div class="mobile-nav-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-sm-4">
+                    <a class="navbar-brand" href="/" title="Rohrtechnik Kirchmann">
+                        {% include 'logo_white.html' %}
+                    </a>
+                </div>
+
+                <div class="col-6 d-flex justify-content-end d-lg-none">
+                    <a href="#"
+                        x-on:click="showMobileNav = !showMobileNav"
+                        class="d-flex align-items-center"
+                    >
+                        <svg height="40" width="40" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-nav-body">
+        <div class="container align-items-center flex-grow-1">
+            <div class="row">
+                <div class="col-12">
+                    {% show_menu 0 100 100 100 'nav-mobile.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,33 @@
+{% load cms_tags %}
+<div
+	class="
+		{% if instance.is_vertical_centered %} d-flex justify-content-center flex-column {% endif %}
+		{% if instance.width_md != '0' %} col-md-{{ instance.width_md }} {% endif %}
+		{% if instance.offset_md != '-' %} offset-md-{{ instance.offset_md }} {% endif %}
+		{% if instance.width_lg != '0' %} col-lg-{{ instance.width_lg }} {% endif %}
+		{% if instance.offset_lg != '-' %} offset-lg-{{ instance.offset_lg }} {% endif %}
+		{% if instance.width_xl != '0' %} col-xl-{{ instance.width_xl }} {% endif %}
+		{% if instance.offset_xl != '-' %} offset-xl-{{ instance.offset_xl }} {% endif %}
+		{% if instance.width_xxl != '0' %} col-xxl-{{ instance.width_xxl }} {% endif %}
+		{% if instance.offset_xxl != '-' %} offset-xxl-{{ instance.offset_xxl }} {% endif %}
+		{% if instance.order != '0' %} order-{{ instance.order }} {% endif %}
+		{% if instance.order_md != '0'  %} order-md-{{ instance.order_md }} {% endif %}
+		{% if instance.order_lg != '0' %} order-lg-{{ instance.order_lg }} {% endif %}
+		{% if instance.order_xl != '0' %} order-xl-{{ instance.order_xl }} {% endif %}
+		{% if instance.order_xxl != '0' %} order-xxl-{{ instance.order_xxl }} {% endif %}
+		"
+>
+
+	{% if instance.show_box %}
+		<div class="box">
+	{% endif %}
+
+	{% for plugin in instance.child_plugin_instances %}
+		{% render_plugin plugin %}
+	{% endfor %}
+
+	{% if instance.show_box %}
+		</div>
+	{% endif %}
+
+</div>

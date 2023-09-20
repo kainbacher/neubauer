@@ -1,0 +1,13 @@
+{% load cms_tags thumbnail %}
+<section
+    {% if instance.anchor_id %}id="{{ instance.anchor_id }}"{% endif %}
+    class="wrapper-{{ instance.background_color }} column py-{{ instance.padding }} {% if not instance.has_gutters %}wrapper-no-gutters{% endif %}"
+>
+    <div class="{% if instance.is_fluid %}{% else %}container{% endif %} {% if not instance.has_gutters %}p-0{% endif %}">
+        <div class="row {{ instance.num_children }} {% if not instance.has_gutters %}no-gutters{% endif %}">
+            {% for plugin in instance.child_plugin_instances %}
+            {% render_plugin plugin %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

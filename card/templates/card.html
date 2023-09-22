@@ -1,6 +1,6 @@
 {% load cms_tags i18n thumbnail static %}
 
-<a href="#" class="card" title="title">
+<a href="{{ instance.get_link }}" class="card" title="{{ instance.title }}">
     {% if instance.title %}
         <h4 class="card-title">{{ instance.title }}</h4>
     {% endif %}

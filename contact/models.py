@@ -23,6 +23,17 @@ class Contact(CMSPlugin):
         blank=True,
         null=True,
     )
+    phone = models.CharField(
+        _('Phone'),
+        max_length=255,
+        blank=True,
+        null=True,
+    )
+    email = models.EmailField(
+        _('Email'),
+        blank=True,
+        null=True,
+    )
     image = FilerImageField(
         verbose_name=_('Image'),
         related_name="contact_image",

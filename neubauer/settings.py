@@ -86,12 +86,12 @@ MIDDLEWARE = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
-    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'cms.middleware.utils.ApphookReloadMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    #'cms.middleware.language.LanguageCookieMiddleware',
+    # 'cms.middleware.language.LanguageCookieMiddleware',
 )
 
 ROOT_URLCONF = 'neubauer.urls'

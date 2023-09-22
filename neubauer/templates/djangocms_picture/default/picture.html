@@ -15,7 +15,7 @@
 
 <img src="{{ instance.img_src }}"
     alt="{% if instance.attributes.alt %}{{ instance.attributes.alt }}{% elif instance.picture.default_alt_text %}{{ instance.picture.default_alt_text }}{% endif %}"
-    class="img-fluid rounded"
+    class="img-fluid rounded-32"
     {% if instance.width %} width="{{ instance.width }}"{% endif %}
     {% if instance.height %} height="{{ instance.height }}"{% endif %}
     {% if img_srcset_data %}

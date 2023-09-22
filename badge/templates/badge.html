@@ -1,0 +1,18 @@
+{% load cms_tags i18n thumbnail static %}
+
+<a href="#" title="" class="badge-job">
+    <div class="badge-job-icon">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_246_592)">
+                <path d="M22 10.0834C20.031 9.00904 17.2645 7.33337 14.6667 7.33337C10.8167 7.33337 7.33337 9.61954 7.33337 16.5C7.33337 25.4815 9.26937 31.9184 12.2302 35.8179C13.2807 37.2039 15.8419 36.773 16.9364 35.3852C17.666 34.4594 18.4379 32.747 19.25 30.25C19.7854 28.8365 20.8854 27.4927 22 27.5C23.1037 27.5 24.2184 28.8512 24.75 30.25C25.5622 32.747 26.334 34.4575 27.0637 35.3834C28.1582 36.7749 30.7304 37.2039 31.7699 35.8179C34.7307 31.9184 36.6667 25.4834 36.6667 16.5C36.6667 9.64337 33.1687 7.33337 29.3334 7.33337C26.7245 7.33337 23.98 9.00354 22 10.0834Z" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 10.0834L27.5 12.8334" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+        </svg>
+    </div>
+    <div class="badge-job-text">
+        <span class="badge-job-text-top">{{ instance.title }}</span>
+        {% if instance.subtitle %}
+            <span class="badge-job-text-bottom">{{ instance.subtitle }}</span>
+        {% endif %}
+    </div>
+</a>

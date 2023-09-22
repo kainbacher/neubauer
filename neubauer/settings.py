@@ -128,6 +128,12 @@ INSTALLED_APPS = (
     'djangocms_link',
     'djangocms_picture',
 
+    'hero',
+    'card',
+    'contact',
+    'badge',
+    'mailform',
+
     # 'djangocms_googlemap',
     # 'djangocms_inherit',
     # 'djangocms_column',

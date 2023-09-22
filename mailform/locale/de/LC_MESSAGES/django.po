@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-30 05:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: forms.py:16
+msgid "Request from website"
+msgstr "Anfrage per Formular auf der Webseite"
+
+#: models.py:9
+msgid "Contact form"
+msgstr "Kontakt Formular"
+
+#: models.py:10
+msgid "Contact forms"
+msgstr "Kontakt Formulare"
+
+#: models.py:13
+msgid "receiver email"
+msgstr "Empfänger E-Mail"
+
+#: models.py:16
+msgid "send mesage"
+msgstr "Sender E-Mail"
+
+#: models.py:18
+msgid "this message is shown when the user has sent the form"
+msgstr ""
+"Diese Nachricht wird angezeigt wenn der Benutezr das Formular versendet hat."
+
+#: models.py:21
+msgid "Email Subject"
+msgstr "Betreff"
+
+#: models.py:27
+msgid "email_text"
+msgstr "Text"
+
+#: models.py:29
+msgid "this message is shown in the email the user gets"
+msgstr "Diese Nachricht wird in der E-Mail an den Sender angezeigt"
+
+#: templates/mailform.html:76
+msgctxt "E-Mail short"
+msgid "Email"
+msgstr "E-Mail"
+
+#: templates/mailform.html:89
+msgid "Phone"
+msgstr "Telefon"
+
+#: templates/mailform.html:89
+msgid "optional"
+msgstr "optional"
+
+#~ msgid "Recipient"
+#~ msgstr "Empfänger"
+
+#~ msgid "Thank you"
+#~ msgstr "Danke"
+
+#, fuzzy
+#~ msgid "Newsletter subscription"
+#~ msgstr "zum Newsletter anmelden"
+
+#~ msgid "First name"
+#~ msgstr "Vorname"
+
+#~ msgid "Last name"
+#~ msgstr "Nachname"
+
+#~ msgid "Street"
+#~ msgstr "Straße"
+
+#~ msgid "Zip"
+#~ msgstr "PLZ"
+
+#~ msgid "City"
+#~ msgstr "Stadt / Ort"
+
+#~ msgid "Newsletter registration"
+#~ msgstr "zum Newsletter anmelden"
+
+#~ msgid "Submit"
+#~ msgstr "Senden"
+
+#~ msgid "Fields marked with an asterisk (*) are required."
+#~ msgstr "Bitte füllen sie alle mit * gekennzeichneten Felder korrekt aus."
+
+#~ msgid "Thank you for your message. We will contact you soon."
+#~ msgstr ""
+#~ "Danke für Ihre Nachricht. Wir werden Sie sobald als möglich kontaktieren."
+
+#~ msgid "Back to the contact form"
+#~ msgstr "Zurück zum Kontaktformular"
+
+#, fuzzy
+#~ msgid "Newsletter"
+#~ msgstr "zum Newsletter anmelden"
+
+#~ msgid "Message"
+#~ msgstr "Nachricht"
+
+#~ msgid ""
+#~ "We have sent you an email. Please confirm the Link to receive the "
+#~ "newsletter."
+#~ msgstr ""
+#~ "Wir haben Ihnen eine E-Mail gesendet. Bitte klicken Sie auf den Link und "
+#~ "bestätigen Sie die Newsletter Anmeldung."
+
+#~ msgid ""
+#~ "If your email was already on the list we just updated the Information."
+#~ msgstr ""
+#~ "Falls Ihre E-Mail Adresse bereits registriert war haben wir die Daten "
+#~ "aktualisiert."
+
+#~ msgid "Address"
+#~ msgstr "Adresse"
+
+#~ msgid "Fax"
+#~ msgstr "Fax"
+
+#~ msgid "Sender"
+#~ msgstr "Absender"
+
+#~ msgid "Send"
+#~ msgstr "Absenden"
+
+#~ msgid "Contact Form"
+#~ msgstr "Kontakt Formular"
+
+#~ msgid "Company"
+#~ msgstr "Firma"
+
+#~ msgid "Customer number"
+#~ msgstr "Kundennummer"
+
+#~ msgid "send"
+#~ msgstr "Absenden"
+
+#~ msgid "General enquiry"
+#~ msgstr "Allgemeine Anfrage"
+
+#~ msgid "Please fill out all required fields which are marked with an *."
+#~ msgstr ""
+#~ "Bitte füllen Sie alle Pflichtfelder aus die mit einem * gekennzeichnet "
+#~ "sind."

@@ -1,0 +1,21 @@
+{% load cms_tags i18n thumbnail static %}
+
+<div class="hero" style="background-image: url('{% static 'images/testbild.png' %}')">
+    <div class="container hero-container">
+        <div class="row min-vh-100">
+            <div class="col-12 col-md-6 hero-col">
+                <div class="hero-title">
+                    {% if instance.title %}
+                        <h1>{{ instance.title }}</h1>
+                    {% endif %}
+                    {% if instance.subtitle %}
+                        <h2>{{ instance.subtitle }}</h2>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-12 col-md-6 hero-col justify-content-end">
+                {% render_placeholder instance.content_hero %}
+            </div>
+        </div>
+    </div>
+</div>

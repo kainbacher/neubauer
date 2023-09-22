@@ -1,0 +1,14 @@
+{% load cms_tags i18n thumbnail static %}
+
+<a href="#" class="card" title="title">
+    {% if instance.title %}
+        <h4 class="card-title">{{ instance.title }}</h4>
+    {% endif %}
+    {% if instance.text %}
+        {{ instance.text|safe }}
+    {% endif %}
+    {% if instance.image %}
+        {% thumbnail instance.image 800x600 crop upscale subject_location=instance.image.subject_location as thumb %}
+        <img src="{{ thumb.url }}" alt="{{ instance.title }}" class="img-fluid" height="{{ thumb.height }}" width="{{ thumb.width }}" />
+    {% endif %}
+</a>

@@ -1,0 +1,7 @@
+Anrfrage über das Kontaktformular:
+
+Name: {{ data.name }}
+E-Mail: {{ data.email }}
+Tel.: {{ data.phone }}
+
+{{ data.content }}

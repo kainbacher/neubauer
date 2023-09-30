@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
-import datetime
 from django.db import models
-from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from cms.models import CMSPlugin
 from cms.models.fields import PlaceholderField
 from filer.fields.image import FilerImageField
-from common.utils.unique_slug import unique_slugify
 
 
 # Models
@@ -36,6 +33,18 @@ class Hero(CMSPlugin):
         null=True,
         on_delete=models.CASCADE,
     )
+    IMAGE_HIGHT_CHOICES = (
+        ('vh-100', _('Height 100%')),
+        ('vh-75', _('Height 75%')),
+        ('vh-50', _('Height 50%')),
+    )
+    image_height = models.CharField(
+        _("Image height"),
+        choices=IMAGE_HIGHT_CHOICES,
+        default=IMAGE_HIGHT_CHOICES[0][0],
+        max_length=50
+    )
+
     content = PlaceholderField(
         'content_hero'
     )

@@ -1,21 +1,12 @@
-import os
-from django import dispatch
-from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
-from django.forms.fields import CharField
-from django import forms
-from django.core.mail import EmailMessage
-from django.template.loader import render_to_string, select_template
-from django.http import HttpResponseRedirect
-
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
-
-from mailform.models import ContactForm
-from mailform.forms import Formular
+from .models import ContactForm
+from .forms import Formular
 
 
 class ContactFormPlugin(CMSPluginBase):
+    """Contact form plugin."""
     model = ContactForm
     name = _('Contact form')
     render_template = "mailform.html"
@@ -33,8 +24,10 @@ class ContactFormPlugin(CMSPluginBase):
                     instance,
                     instance.receiver_email
                 )
+                form = Formular()
                 context.update({
-                    'form_sent': True,
+                    'mailform_sent': True,
+                    'form': form,
                     'instance': instance,
                 })
             else:

@@ -133,6 +133,8 @@ INSTALLED_APPS = (
     'contact',
     'badge',
     'mailform',
+    'team',
+    'formappointment',
 
     # 'djangocms_googlemap',
     # 'djangocms_inherit',
@@ -308,6 +310,34 @@ CKEDITOR_SETTINGS = {
     'skin': 'moono-lisa',
     'stylesSet': [
         {
+            'name': 'Pre Header',
+            'element': 'span',
+            'attributes': {
+                'class': 'prehaeder'
+            }
+        },
+        {
+            'name': 'Span: Überschrift 1',
+            'element': 'span',
+            'attributes': {
+                'class': 'h1'
+            }
+        },
+        {
+            'name': 'Span: Überschrift 2',
+            'element': 'span',
+            'attributes': {
+                'class': 'h2'
+            }
+        },
+        {
+            'name': 'Span: Überschrift 3',
+            'element': 'span',
+            'attributes': {
+                'class': 'h3'
+            }
+        },
+        {
             'name': 'Text groß',
             'element': 'span',
             'attributes': {
@@ -319,13 +349,6 @@ CKEDITOR_SETTINGS = {
             'element': 'span',
             'attributes': {
                 'class': 'small'
-            }
-        },
-        {
-            'name': 'Pre Header',
-            'element': 'span',
-            'attributes': {
-                'class': 'prehaeder'
             }
         },
     ],

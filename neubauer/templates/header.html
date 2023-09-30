@@ -1,10 +1,10 @@
 {% load cms_tags sekizai_tags i18n menu_tags compress thumbnail static %}
 <header>
-    <div class="header">
+    <div class="header" x-data="{ showApointmentBox: false }">
         <div class="container">
             <div class="row">
                 <div class="col-6 col-md-3 col-xl-2 col-xxl-3 pe-lg-4">
-                    <a class="navbar-brand" href="/" title="Rohrtechnik Kirchmann">
+                    <a class="navbar-brand" href="/" title="Dr. Georg Neubauer">
                         {% include 'logo.html' %}
                     </a>
                 </div>
@@ -15,65 +15,48 @@
                         </ul>
                     </div>
                 </nav>
-                <div class="header-mailto col-lg-2 d-none d-xl-flex justify-content-end">
+                <div class="col-6 offset-md-3 col-lg-2 offset-lg-0 d-flex justify-content-end">
                     <div class="d-flex justify-content-center align-items-center gap-1">
-                        <a href="mailto:office@kirchmann-rohrtechnik.at" title="E-Mail schreiben" class="btn btn-primary rounded-pill">
-                            Termin vereinbaren
-                        </a>
-                    </div>
-                </div>
-                <div class="header-phone col-6 col-lg-8 d-flex justify-content-end d-xl-none">
-                    <div class="d-flex justify-content-center align-items-center me-1">
-                        <a href="tel:+4355754789" title="Anrufen" class="btn btn-primary rounded-pill">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" height="24" width="24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                        <button x-on:click="showApointmentBox = !showApointmentBox" class="btn btn-primary rounded-pill">
+                            Termin <span class="d-none d-md-inline">vereinbaren</span>
+                        </button>
+                        <button x-on:click="showMobileNav = !showMobileNav" class="btn btn-primary rounded-pill d-flex align-items-center d-lg-none">
+                            {% comment %} Hamburger {% endcomment %}
+                            <svg
+                                :class="{ 'd-block': showMobileNav, 'd-none' : showMobileNav }"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                            >
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
                             </svg>
-                        </a>
+                            {% comment %} Close {% endcomment %}
+                            <svg
+                                :class="{ 'd-block': !showMobileNav, 'd-none' : !showMobileNav }"
+                                class="d-none"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                            >
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
                     </div>
-                    <a href="#" x-on:click="showMobileNav = !showMobileNav" class="d-flex align-items-center">
-                        <svg height="40" width="40" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path  stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                        </svg>
-                    </a>
                 </div>
+            </div>
+            <nav
+                class="mobile-nav"
+                :class="{ 'd-block': showMobileNav, 'd-none' : !showMobileNav }"
+            >
+                {% show_menu 0 100 100 100 'nav-mobile.html' %}
+            </nav>
+
+            <div class="d-none" :class="{ 'd-flex': showApointmentBox, 'd-none' : !showApointmentBox }">
+                {% static_placeholder "appointmentform" %}
             </div>
         </div>
     </div>
 </header>
-
-<nav
-    class="mobile-nav"
-    :class="{ 'd-flex': showMobileNav, 'd-none' : !showMobileNav }"
->
-    <div class="mobile-nav-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-6 col-sm-4">
-                    <a class="navbar-brand" href="/" title="Rohrtechnik Kirchmann">
-                        {% include 'logo_white.html' %}
-                    </a>
-                </div>
-
-                <div class="col-6 d-flex justify-content-end d-lg-none">
-                    <a href="#"
-                        x-on:click="showMobileNav = !showMobileNav"
-                        class="d-flex align-items-center"
-                    >
-                        <svg height="40" width="40" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="mobile-nav-body">
-        <div class="container align-items-center flex-grow-1">
-            <div class="row">
-                <div class="col-12">
-                    {% show_menu 0 100 100 100 'nav-mobile.html' %}
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>

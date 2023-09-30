@@ -1,0 +1,16 @@
+Anrfrage über das Kontaktformular der Webseite:
+
+Name: {{ data.first_name }} {{ data.last_name }}
+Wohnort:{{ data.location }}
+Telefon: {{ data.phone }}
+E-Mail: {{ data.email }}
+
+Nachricht:
+{{ data.content }}
+
+Schnellstmöglicher Termin: {% if data.quick_appointment %}Ja{% else %}Nein{% endif %}
+Ich bin bereits Patient bei Dr. Georg Neubauer: {% if data.already_customer %}Ja{% else %}Nein{% endif %}
+Bitte informieren Sie mich per: {{ data.information_channel }}
+
+Ich habe die Datenschutzerklärung gelesen und stimme zu:
+{% if data.data_protection %}Ja{% else %}Nein{% endif %}

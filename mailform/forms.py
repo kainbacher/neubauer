@@ -8,9 +8,10 @@ from captcha.fields import ReCaptchaField
 
 class Formular(forms.Form):
     name = forms.CharField(required=True)
-    phone = forms.CharField(required=False)
     email = forms.EmailField(required=True)
+    recommend_us = forms.CharField(required=True)
     content = forms.CharField(required=False, widget=forms.Textarea())
+    data_protection = forms.BooleanField(required=True)
     # check1 = forms.CharField(widget=forms.HiddenInput())
 
     def send_notification_to_sender(self, receiver_email):
@@ -54,6 +55,6 @@ class Formular(forms.Form):
     def __init__(self, *args, **kwargs):
         super(Formular, self).__init__(*args, **kwargs)
         self.fields['name'].widget.attrs['class'] = 'form-control'
-        self.fields['phone'].widget.attrs['class'] = 'form-control'
         self.fields['email'].widget.attrs['class'] = 'form-control'
         self.fields['content'].widget.attrs['class'] = 'form-control'
+        self.fields['data_protection'].widget.attrs['class'] = 'form-check-input'

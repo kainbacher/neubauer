@@ -1,0 +1,144 @@
+{% load i18n sekizai_tags static %}
+
+{% addtoblock "modal" %}
+    <div
+        x-data="{ app_modal_open: {% if appointment_form_sent %}true{% else %}false{% endif %} }"
+        class="modal fade"
+        :class="{ 'show': app_modal_open }"
+        x-show="app_modal_open"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row py-2">
+                        <div class="col-12 text-center">
+                            <svg width="180px" height="180px" viewBox="0 0 180 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <defs></defs>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <path
+                                        d="M90,0 C139.626667,0 180,40.3766667 180,90 C180,139.626667 139.626667,180 90,180 C40.3733333,180 0,139.626667 0,90 C0,40.3766667 40.3733333,0 90,0 Z M90,172 C135.213333,172 172,135.216667 172,90 C172,44.7866667 135.213333,8.00333333 90,8.00333333 C44.7866667,8.00333333 8,44.7866667 8,90 C8,135.216667 44.7866667,172 90,172 Z"
+                                        fill="#D8D8D8"
+                                    >
+                                    </path>
+                                    <path
+                                        d="M139.840333,54.5033333 L74.337,119.823333 L40.1603333,85.7433333 C38.5936667,84.1866667 36.0603333,84.19 34.5003333,85.75 C32.9436667,87.3166667 32.947,89.85 34.507,91.4066667 L71.5103333,128.306667 C71.7836667,128.576667 72.1136667,128.74 72.4336667,128.916667 C72.5703333,128.993333 72.687,129.12 72.8303333,129.18 C73.3136667,129.376667 73.8236667,129.473333 74.337,129.473333 C74.847,129.473333 75.3603333,129.376667 75.8403333,129.18 C75.987,129.12 76.1003333,128.993333 76.237,128.916667 C76.5603333,128.74 76.887,128.576667 77.1603333,128.306667 L145.490333,60.1666667 C147.053667,58.6066667 147.057,56.0766667 145.497,54.51 C143.940333,52.95 141.410333,52.9433333 139.840333,54.5033333"
+                                        fill="#E73037"
+                                    >
+                                    </path>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="row pb-2">
+                        <div class="col-12 col-md-8 offset-md-2 text-center">
+                            {% if instance.sent_message %}
+                                <div class="my-2">
+                                    {{ instance.sent_message|safe }}
+                                </div>
+                            {% endif %}
+                            <div class="form-group pb-1 text-center form-submit">
+                                <button type="button" class="btn btn-primary" @click="app_modal_open = !app_modal_open">schließen</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endaddtoblock %}
+
+
+<div class="form-appointment py-4 p-lg-4">
+    <form action='' method="post" class="container">
+        {% csrf_token %}
+        {% comment %} {{ form.check1 }} {% endcomment %}
+        <div class="row mb-2">
+            <div class="col-12">
+                <h5>Terminvereinbarung</h5>
+                <p>Gerne können Sie einen Termin telefonisch unter <a href="tel:+43552564772" title="Bei Dr. Neubauer anrufen">+43 5525 64 772</a> oder per Formular vereinbaren.</p>
+                {% if app_form_invalid %}
+                    <div class="alert alert-danger" role="alert">
+                        <p class="mb-0">Das Formular konnte nicht korrekt versendet werden. Bitte füllen Sie das Formular korrekt aus und versuchen Sie es erneut.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-4">
+
+                <div class="form-group pb-1">
+                    <label for="id_first_name">Vorname</label>
+                    {{ app_form.first_name }}
+                </div>
+
+                <div class="form-group pb-1">
+                    <label for="id_last_name">Nachname</label>
+                    {{ app_form.last_name }}
+                </div>
+
+                <div class="form-group pb-1">
+                    <label for="id_location">Wohnort</label>
+                    {{ app_form.location }}
+                </div>
+
+                <div class="form-group pb-1">
+                    <label for="id_phone">Telefon</label>
+                    {{ app_form.phone }}
+                </div>
+
+                <div class="form-group pb-1">
+                    <label for="id_email">E-Mail</label>
+                    {{ app_form.email }}
+                </div>
+
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="form-group pb-1 d-flex flex-column h-100">
+                    <label for="id_content">Nachricht</label>
+                    {{ app_form.content }}
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+
+                <div class="mb-1 mt-2 form-check">
+                    {{ app_form.quick_appointment }}
+                    <label class="form-check-label" for="id_quick_appointment">Schnellstmöglicher Termin</label>
+                </div>
+
+                <div class="mb-1 form-check">
+                    {{ app_form.already_customer }}
+                    <label class="form-check-label" for="id_already_customer">
+                        Ich bin bereits Patient bei Dr. Georg Neubauer
+                    </label>
+                </div>
+
+                <div class="my-2">
+                    <label for="exampleInputEmail1" class="form-label">Bitte informieren Sie mich per:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="information_channel" id="id_information_channel_email" value="E-Mail" checked>
+                        <label class="form-check-label" for="id_information_channel_email">
+                            E-Mail
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="information_channel" id="id_information_channel_phone" value="Telefon">
+                        <label class="form-check-label" for="id_information_channel_phone">
+                            Telefon
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-1 form-check">
+                    {{ app_form.data_protection }}
+                    <label class="form-check-label" for="id_data_protection">
+                        Ich habe die <a href="/datenschutz/" title="Datenschutzerklärung">Datenschutzerklärung</a> gelesen und stimme zu.
+                    </label>
+                </div>
+
+                <div class="mb-1">
+                    <input id="btn_submit" type="submit" value="Anfrage absenden" class="btn btn-primary rounded-pill">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

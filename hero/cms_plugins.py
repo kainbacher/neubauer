@@ -12,3 +12,4 @@ class HeroPlugin(CMSPluginBase):
     model = Hero
     name = _('Hero')
     render_template = "hero.html"
+    allow_children = True

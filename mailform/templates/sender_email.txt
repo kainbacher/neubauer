@@ -2,6 +2,10 @@ Anrfrage über das Kontaktformular:
 
 Name: {{ data.name }}
 E-Mail: {{ data.email }}
-Tel.: {{ data.phone }}
+Würden Sie uns weiterempfehlen: {{ data.recommend_us}}
 
+Nachricht
 {{ data.content }}
+
+Ich habe die Datenschutzerklärung gelesen und stimme zu:
+{% if data.data_protection %}Ja{% else %}Nein{% endif %}

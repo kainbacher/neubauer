@@ -1,8 +1,8 @@
 {% load cms_tags i18n thumbnail static %}
 
-<div class="hero" style="background-image: url('{% static 'images/testbild.png' %}')">
+<div class="hero {{ instance.image_height }}" style="background-image: url('{% static 'images/testbild.png' %}')">
     <div class="container hero-container">
-        <div class="row min-vh-100">
+        <div class="row {{ instance.image_height }}">
             <div class="col-12 col-md-6 hero-col">
                 <div class="hero-title">
                     {% if instance.title %}
@@ -13,8 +13,10 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="col-12 col-md-6 hero-col justify-content-end">
-                {% render_placeholder instance.content_hero %}
+            <div class="col-12 col-md-6 hero-col justify-md-content-end">
+                {% for plugin in instance.child_plugin_instances %}
+                    {% render_plugin plugin %}
+                {% endfor %}
             </div>
         </div>
     </div>

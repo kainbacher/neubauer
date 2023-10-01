@@ -1,6 +1,7 @@
 {% load cms_tags i18n thumbnail static %}
 
-<div class="hero {{ instance.image_height }}" style="background-image: url('{% static 'images/testbild.png' %}')">
+{% thumbnail instance.image 1920x1080 crop upscale subject_location=instance.image.subject_location as thumb %}
+<div class="hero {{ instance.image_height }} {{ instance.template }}" style="background-image: url('{{ thumb.url }}')">
     <div class="container hero-container">
         <div class="row {{ instance.image_height }}">
             <div class="col-12 col-md-6 hero-col">
@@ -13,7 +14,7 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="col-12 col-md-6 hero-col justify-md-content-end">
+            <div class="col-12 col-md-6 col-lg-5 offset-lg-1 hero-col justify-md-content-end">
                 {% for plugin in instance.child_plugin_instances %}
                     {% render_plugin plugin %}
                 {% endfor %}

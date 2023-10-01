@@ -48,3 +48,13 @@ class Hero(CMSPlugin):
     content = PlaceholderField(
         'content_hero'
     )
+    TEMPLATE_CHOICES = (
+        ('content-bottom', _('Content bottom')),
+        ('content-top', _('Content top')),
+    )
+    template = models.CharField(
+        _("Template"),
+        choices=TEMPLATE_CHOICES,
+        default=TEMPLATE_CHOICES[0][0],
+        max_length=50
+    )

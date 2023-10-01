@@ -1,7 +1,7 @@
 {% load cms_tags %}{% spaceless %}
 
 {# this needs to be in one line for rendering purpose #}
-{% endspaceless %}<span><a href="{{ link }}" class="btn btn-outline-primary rounded-pill" {% if instance.target %} target="{{ instance.target }}"{% endif %}{% if instance.attributes %} {{ instance.attributes_str }}{% endif %}>{% for plugin in instance.child_plugin_instances %}{% render_plugin plugin %}{% empty %}{{ instance.name }}{% endfor %}</a></span>{% spaceless %}
+{% endspaceless %}<span><a href="{{ link }}" class="btn btn-primary rounded-pill" {% if instance.target %} target="{{ instance.target }}"{% endif %}{% if instance.attributes %} {{ instance.attributes_str }}{% endif %}>{% for plugin in instance.child_plugin_instances %}{% render_plugin plugin %}{% empty %}{{ instance.name }}{% endfor %}</a></span>{% spaceless %}
 
 {% endspaceless %}{% comment %}
 # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a

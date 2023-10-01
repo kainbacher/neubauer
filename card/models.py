@@ -39,6 +39,16 @@ class Card(CMSPlugin):
         null=True,
         on_delete=models.SET_NULL,
     )
+    TEMPLATE_CHOICES = (
+        ('dynamic', _('Dynamic height')),
+        ('flex', _('Flex height')),
+    )
+    template = models.CharField(
+        _("Template"),
+        choices=TEMPLATE_CHOICES,
+        default=TEMPLATE_CHOICES[0][0],
+        max_length=50
+    )
 
     def get_link(self):
         link = ''

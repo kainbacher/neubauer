@@ -62,6 +62,16 @@ h3,
     font-size: 24px;
 }
 
+h4,
+.h4 {
+    font-size: 22px;
+}
+
+h5,
+.h5 {
+    font-size: 20px;
+}
+
 a {
     @include ease;
 }
@@ -207,6 +217,13 @@ header {
                     }
                 }
             }
+
+            .active {
+                a {
+                    background-color: rgba($color: $red-300, $alpha: 0.1);
+                    color: $gray-800;
+                }
+            }
         }
 
     }
@@ -294,34 +311,53 @@ footer {
     background-size: cover;
     width: 100vw;
 
-    &-container {
-        min-height: 100vh;
+    &.content-bottom {
+        .hero-col {
+            align-items: flex-end;
+            display: flex;
+            padding-bottom: 64px;
+
+            @media (min-width: 768px) {
+                padding-bottom: 160px;
+            }
+        }
     }
 
-    &-col {
-        align-items: flex-end;
-        display: flex;
-        padding-bottom: 64px;
+    &.content-top {
+        .hero-col {
+            align-items: flex-start;
+            display: flex;
+            padding-top: 200px;
 
-        @media (min-width: 768px) {
-            padding-bottom: 104px;
+            @media (min-width: 768px) {
+                padding-top: 260px;
+            }
         }
+    }
+
+    &-container {
+        min-height: 100vh;
     }
 
     h1 {
         color: $red-500;
         font-size: 24px;
+        line-height: 120%;
+        margin-bottom: 16px;
 
         @include media-breakpoint-up(md) {
             font-size: 32px;
         }
         @include media-breakpoint-up(lg) {
             font-size: 64px;
+            margin-bottom: 32px;
         }
     }
     h2 {
         color: $gray-900;
         font-size: 20px;
+        hyphens: none;
+        line-height: 120%;
 
         @include media-breakpoint-up(md) {
             font-size: 24px;
@@ -335,6 +371,8 @@ footer {
 // badge-jobs
 // ---------------------------------------------------------------------------
 .badge-job {
+    @include ease-slow;
+
     align-items: center;
     background-color: $white;
     border-radius: 96px;
@@ -344,6 +382,10 @@ footer {
     justify-content: center;
     padding: 16px;
     text-decoration: none;
+
+    &:hover {
+        transform: scale(1.02);
+    }
 
     &-icon {
         background-color: $red-500;
@@ -399,12 +441,17 @@ footer {
 a.card {
     @include ease-slow;
 
+    background-color: $white;
     border-radius: 32px;
     border: 0px;
-    background-color: $white;
     box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.12);
     padding: 32px;
     text-decoration: none;
+
+    &.flex {
+        display: flex;
+        height: 100%;
+    }
 
     &:hover {
         transform: scale(1.02);
@@ -426,6 +473,7 @@ a.card {
 
     p {
         color: var(--gray-900, #141414);
+        flex-grow: 1;
         font-family: Inter;
         font-size: 18px;
         font-style: normal;
@@ -457,7 +505,7 @@ a.card {
 
     h4 {
         color: $black;
-        font-size: 40px;
+        font-size: 24px;
         font-style: normal;
         font-weight: 500;
         line-height: normal;
@@ -476,7 +524,7 @@ a.card {
     border-radius: 32px;
     border: 1px solid #EFEFEF;
     background: linear-gradient(180deg, rgba(244, 244, 244, 0.40) 0%, rgba(235, 235, 235, 0.00) 100%);
-    padding: 64px;
+    padding: 40px;
     display: flex;
 
     h4 {

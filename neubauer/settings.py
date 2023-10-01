@@ -210,7 +210,6 @@ CMS_LANGUAGES = {
         {
             'code': 'de',
             'name': gettext('Deutsch'),
-            # 'fallbacks': ['en',],
             'public': True,
         },
         # {
@@ -230,6 +229,9 @@ CMS_LANGUAGES = {
     }
 }
 
+DJANGOCMS_LINK_TEMPLATES = [
+    ('button', _('Button')),
+]
 
 CKEDITOR_SETTINGS = {
     'contentsCss': "%scss/rte.min.css" % (STATIC_URL),

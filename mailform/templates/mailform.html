@@ -1,4 +1,4 @@
-{% load i18n sekizai_tags static %}
+{% load i18n sekizai_tags static thumbnail %}
 
 {% addtoblock "modal" %}
     <div
@@ -53,22 +53,41 @@
         <div class="col-12">
             <div class="form-opinion">
                 <div class="row mb-2">
-                    <div class="col-12">
-                        <h4>Ihre Meinung ist uns wichtig!</h4>
+                    <div class="col-12 col-md-8 col-lg-8">
+                        {% if instance.title %}
+                            <h4>{{ instance.title }}</h4>
+                        {% endif %}
+                        {% if instance.text %}
+                            {{ instance.text|safe }}
+                        {% endif %}
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4">
-                        <p>Wir sind dankbar für Ihre Bewertung unserer Zahnarztpraxis. Sie können und auf Google, Facebook oder direkt auf unserer Website bewerten. Vielen Dank für Ihre Bemühungen!</p>
-                        <div>
-                            <a
-                                href="https://www.facebook.com/pg/dr.neubauer.zahnarzt/reviews/?ref=page_internal"
-                                class="btn btn-primary rounded-pill mb-1 d-block d-lg-inline">Facebook Bewertung</a>
-                            <a
-                                href="https://search.google.com/local/writereview?placeid=ChIJVVmJgn1Im0cRTAvbWc0aCUo"
-                                class="btn btn-primary rounded-pill mb-1 d-block d-lg-inline">Google Berwertung</a>
+                        {% if instance.image %}
+                            {% thumbnail instance.image 800x600 crop upscale subject_location=instance.image.subject_location as thumb %}
+                            <img src="{{ thumb.url }}" alt="{{ instance.image.name }}" class="img-fluid rounded-32" height="{{ thumb.height }}" width="{{ thumb.width }}" />
+                        {% endif %}
+                        <div class="my-2">
+                            {% if instance.facebook_evaluation_link %}
+                                <a
+                                    href="{{ instance.facebook_evaluation_link }}"
+                                    class="btn btn-primary rounded-pill mb-1 d-block d-lg-inline me-1"
+                                    title="Facebook Bewertung"
+                                >
+                                    Facebook Bewertung
+                                </a>
+                            {% endif %}
+                            {% if instance.google_evaluation_link %}
+                                <a
+                                    href="{{ instance.google_evaluation_link }}"
+                                    class="btn btn-primary rounded-pill mb-1 d-block d-lg-inline"
+                                    title="Google Berwertung"
+                                >
+                                    Google Berwertung
+                                </a>
+                            {% endif %}
                         </div>
-                        <img src="{% static 'images/testbild.png' %}" alt="Title" class="img-fluid rounded-32" />
                     </div>
                     <div class="col-12 col-md-6 col-lg-8 px-0 px-md-2 px-lg-4">
                         <h5 class="mb-2">Direkte Empfehlung</h5>
@@ -121,7 +140,7 @@
 
                                     <div class="mb-1 form-check">
                                         {{ form.data_protection }}
-                                        <label class="form-check-label" for="flexCheckDefault">
+                                        <label class="form-check-label" for="id_data_protection">
                                             Ich habe die <a href="/datenschutz/" title="Datenschutzerklärung">Datenschutzerklärung</a> gelesen und stimme zu.
                                         </label>
                                     </div>

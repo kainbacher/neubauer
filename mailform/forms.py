@@ -57,4 +57,5 @@ class Formular(forms.Form):
         self.fields['name'].widget.attrs['class'] = 'form-control'
         self.fields['email'].widget.attrs['class'] = 'form-control'
         self.fields['content'].widget.attrs['class'] = 'form-control'
+        self.fields['content'].widget.attrs['rows'] = '4'
         self.fields['data_protection'].widget.attrs['class'] = 'form-check-input'

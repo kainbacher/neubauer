@@ -1,8 +1,5 @@
-{% load cms_tags sekizai_tags i18n menu_tags compress thumbnail static %}{% get_current_language as LANGUAGE_CODE %}<!DOCTYPE html>
-<!--[if lt IE 7]>      <html itemscope itemtype="http://schema.org/LocalBusiness" lang="{{ LANGUAGE_CODE|default:'en-gb' }}" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html itemscope itemtype="http://schema.org/LocalBusiness" lang="{{ LANGUAGE_CODE|default:'en-gb' }}" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html itemscope itemtype="http://schema.org/LocalBusiness" lang="{{ LANGUAGE_CODE|default:'en-gb' }}" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 11]><!--><html itemscope itemtype="http://schema.org/LocalBusiness" lang="{{ LANGUAGE_CODE|default:'en-gb' }}" class="no-js"><!--<![endif]-->
+{% load cms_tags sekizai_tags i18n menu_tags compress thumbnail static %}{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
 <head prefix="dcterms: http://purl.org/dc/terms/#">
     <meta charset="UTF-8" />
     <!--
@@ -31,7 +28,6 @@
     {% include "meta_socialmediacards.html" %}
     {% block extra_meta %}{% endblock %}
     {% render_block "css" %}
-    <link href="{% static 'swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
     {% compress css %}
     <link href="{% static 'css/styles.min.css' %}" rel="stylesheet" />
     {% endcompress %}
@@ -54,10 +50,8 @@ x-data="{ showMobileNav: false }"
 
 {% render_block "modal" %}
 {% render_block "js" %}
-{% comment %} <script src="{% static 'swiper/swiper-bundle.min.js' %}"></script> {% endcomment %}
 <script src="{% static 'js/alpinejs-3.12.3.js' %}"></script>
 {% compress js %}
-{% comment %} <script src="{% static 'js/main.js' %}"></script> {% endcomment %}
 {% endcompress %}
 <script type="application/ld+json">
     {
@@ -69,9 +63,9 @@ x-data="{ showMobileNav: false }"
         "email": "office@dr-neubauer.at",
         "telephone": "+43 000 000 000",
         "sameAs": [
-        "https://www.instagram.com/",
-        "https://www.linkedin.com/company/",
-        "https://www.facebook.com/"
+            "https://www.instagram.com/",
+            "https://www.linkedin.com/company/",
+            "https://www.facebook.com/"
         ]
     }
 </script>

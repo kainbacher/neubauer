@@ -44,7 +44,6 @@ class Hero(CMSPlugin):
         default=IMAGE_HIGHT_CHOICES[0][0],
         max_length=50
     )
-
     content = PlaceholderField(
         'content_hero'
     )

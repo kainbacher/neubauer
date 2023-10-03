@@ -15,14 +15,11 @@
         <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
             <div class="row">
                 {% for person in object_list  %}
-
                     <div class="col-12 col-md-6 mb-1 {% if forloop.counter == 2 %}mt-4{% endif %}">
-
                         <figure class="team-card">
                             {% if person.image %}
                                 <img src="{% thumbnail person.image 416x480 crop upscale subject_location=person.image.subject_location %}" alt="{{ person.name }}" class="img-fluid rounded-32" />
                             {% endif %}
-
                             <figcaption>
                                 <p class="team-card-name">
                                     {% if person.academic_title %}
@@ -35,7 +32,6 @@
                                 {% endif %}
                             </figcaption>
                         </figure>
-
                     </div>
                 {% endfor %}
             </div>
@@ -48,12 +44,10 @@
     <div class="row">
         {% for person in object_list  %}
             <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-1">
-
                 <figure class="team-card">
                     {% if person.image %}
                         <img src="{% thumbnail person.image 416x480 crop upscale subject_location=person.image.subject_location %}" alt="{{ person.name }}" class="img-fluid rounded-32" />
                     {% endif %}
-
                     <figcaption>
                         <p class="team-card-name">
                             {% if person.academic_title %}
@@ -66,7 +60,6 @@
                         {% endif %}
                     </figcaption>
                 </figure>
-
             </div>
         {% endfor %}
     </div>

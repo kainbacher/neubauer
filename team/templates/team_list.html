@@ -20,11 +20,16 @@
 
                         <figure class="team-card">
                             {% if person.image %}
-                                <img src="{% thumbnail person.image 480x416 crop upscale subject_location=person.image.subject_location %}" alt="{{ person.name }}" class="img-fluid rounded-32" />
+                                <img src="{% thumbnail person.image 416x480 crop upscale subject_location=person.image.subject_location %}" alt="{{ person.name }}" class="img-fluid rounded-32" />
                             {% endif %}
 
                             <figcaption>
-                                <p class="team-card-name">{% if person.name %}{{ person.name }}{% endif %}</p>
+                                <p class="team-card-name">
+                                    {% if person.academic_title %}
+                                        {{ person.academic_title }}<br />
+                                    {% endif %}
+                                    {% if person.name %}{{ person.name }}{% endif %}
+                                </p>
                                 {% if person.function %}
                                     <p class="team-card-function">{{ person.function }}</p>
                                 {% endif %}
@@ -46,11 +51,16 @@
 
                 <figure class="team-card">
                     {% if person.image %}
-                        <img src="{% thumbnail person.image 480x416 crop upscale subject_location=person.image.subject_location %}" alt="{{ person.name }}" class="img-fluid rounded-32" />
+                        <img src="{% thumbnail person.image 416x480 crop upscale subject_location=person.image.subject_location %}" alt="{{ person.name }}" class="img-fluid rounded-32" />
                     {% endif %}
 
                     <figcaption>
-                        <p class="team-card-name">{% if person.name %}{{ person.name }}{% endif %}</p>
+                        <p class="team-card-name">
+                            {% if person.academic_title %}
+                                {{ person.academic_title }}<br />
+                            {% endif %}
+                            {% if person.name %}{{ person.name }}{% endif %}
+                        </p>
                         {% if person.function %}
                             <p class="team-card-function">{{ person.function }}</p>
                         {% endif %}

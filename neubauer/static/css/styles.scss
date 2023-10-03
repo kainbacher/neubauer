@@ -554,15 +554,17 @@ a.card {
     }
 
     &-name {
-        font-size: 24px;
+        font-size: 20px;
         margin-bottom: 0;
         margin-top: 16px;
+        line-height: 140%;
     }
 
     &-function {
-        font-size: 24px;
+        font-size: 20px;
         color: $gray-500;
         margin-bottom: 0;
+        line-height: 140%;
     }
 }
 

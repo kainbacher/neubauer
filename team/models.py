@@ -43,6 +43,12 @@ class Person(models.Model):
         _('is_visible'),
         default=True
     )
+    academic_title = models.CharField(
+        _('Academic title'),
+        max_length=255,
+        blank=True,
+        null=True
+    )
     name = models.CharField(
         _('Name'),
         max_length=255,

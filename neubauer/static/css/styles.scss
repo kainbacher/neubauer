@@ -518,8 +518,17 @@ a.card {
 }
 
 .form-appointment {
-    max-height: 65vh;
+    max-height: 80vh;
     overflow: scroll;
+
+    @include media-breakpoint-up(md) {
+        max-height: 85vh;
+    }
+
+    @include media-breakpoint-up(lg) {
+        max-height: 65vh;
+    }
+
 }
 
 // contact block

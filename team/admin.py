@@ -9,11 +9,13 @@ class PersonAdmin(admin.ModelAdmin):
     list_display = [
         'name',
         'function',
+        'team',
         'position',
         'is_visible',
     ]
     list_filter = [
         'is_visible',
+        'team',
     ]
     list_editable = [
         'position'

@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-10 23:05+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cms_plugins.py:13
+msgid "Information Box"
+msgstr "Info Box"
+
+#: models.py:14
+msgid "is visible"
+msgstr "sichtbar"
+
+#: models.py:16
+msgid ""
+"Show InfoBox on page. If start date and end date are set, Info Box is only "
+"shown between start_date and end_date."
+msgstr ""
+"Wenn gesetzt, wird die Info Box auf der Seite angezeigt. Wenn Start- und "
+"Enddatum gesetzt sind, wird die Info Box nur zwischen Start- und Enddatum "
+"angezeigt."
+
+#: models.py:19
+msgid "Title"
+msgstr "Titel"
+
+#: models.py:23
+msgid "Text"
+msgstr "Text"
+
+#: models.py:28
+msgid "Start date"
+msgstr "Stattdatum"
+
+#: models.py:33
+msgid "End date"
+msgstr "Enddatum"

@@ -15,9 +15,11 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-5 offset-lg-1 hero-col justify-md-content-end">
+                <div>
                 {% for plugin in instance.child_plugin_instances %}
                     {% render_plugin plugin %}
                 {% endfor %}
+                </div>
             </div>
         </div>
     </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-29 13:25+0100\n"
+"POT-Creation-Date: 2023-11-10 23:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,88 +18,96 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cms_plugins.py:12
+#: cms_plugins.py:13
 msgid "Team List"
 msgstr "Team Listenausgabe"
-
-#: cms_plugins.py:30 models.py:23 models.py:24 models.py:126
-msgid "Person"
-msgstr "Person"
 
 #: cms_toolbars.py:10
 msgid "Modules"
 msgstr "Module"
 
-#: cms_toolbars.py:13
-msgid "Person overview"
-msgstr "Personen Übersicht"
+#: cms_toolbars.py:13 models.py:70 models.py:96
+#, fuzzy
+#| msgid "Team List"
+msgid "Team"
+msgstr "Team Listenausgabe"
 
-#: cms_toolbars.py:16
-msgid "Add Person"
-msgstr "Person hinzufügen"
+#: models.py:9
+msgid "Doctor"
+msgstr "Arzt"
 
-#: models.py:27
+#: models.py:10
+msgid "Team "
+msgstr "Team"
+
+#: models.py:39 models.py:40
+msgid "Person"
+msgstr "Person"
+
+#: models.py:43
 msgid "is_visible"
 msgstr "sichtbar"
 
-#: models.py:31
+#: models.py:47
+msgid "Academic title"
+msgstr "Akademischer Titel"
+
+#: models.py:53
 msgid "Name"
 msgstr "Name"
 
-#: models.py:33
+#: models.py:55
 msgid "Full name"
 msgstr "Name"
 
-#: models.py:36
+#: models.py:58
 msgid "Function"
 msgstr "Funktion"
 
-#: models.py:41
-msgid "Email"
-msgstr "E-Mail"
-
-#: models.py:46 models.py:111
-msgid "Phone"
-msgstr "Telefon"
-
-#: models.py:51
+#: models.py:63
 msgid "Image"
 msgstr "Bild"
 
-#: models.py:58
-msgid "Bludenz"
-msgstr "Bludenz"
-
-#: models.py:59
-msgid "Thüringen "
-msgstr "Thüringen"
-
-#: models.py:60
-msgid "Dornbirn"
-msgstr "Dornbirn"
-
-#: models.py:63
-msgid "Location"
-msgstr "Ort"
-
-#: models.py:69
+#: models.py:76
 msgid "Position"
 msgstr "Position"
 
-#: models.py:83 models.py:93
+#: models.py:90
 msgid "Title"
 msgstr "Titel"
 
-msgid "Subtitle"
-msgstr "Untertitel"
+#~ msgid "Person overview"
+#~ msgstr "Personen Übersicht"
 
-#: models.py:107
-msgid "Online appointment"
-msgstr "Online Terminvereinbarung"
+#~ msgid "Add Person"
+#~ msgstr "Person hinzufügen"
 
-#: models.py:118
-msgid "E-Mail"
-msgstr "E-mail"
+#~ msgid "Email"
+#~ msgstr "E-Mail"
+
+#~ msgid "Phone"
+#~ msgstr "Telefon"
+
+#~ msgid "Bludenz"
+#~ msgstr "Bludenz"
+
+#~ msgid "Thüringen "
+#~ msgstr "Thüringen"
+
+#~ msgid "Dornbirn"
+#~ msgstr "Dornbirn"
+
+#~ msgid "Location"
+#~ msgstr "Ort"
+
+#~ msgid "Subtitle"
+#~ msgstr "Untertitel"
+
+#~ msgid "Online appointment"
+#~ msgstr "Online Terminvereinbarung"
+
+#~ msgid "E-Mail"
+#~ msgstr "E-mail"
 
 #~ msgid "e.g. Ansprechperson:"
 #~ msgstr "z.b. Ansprechperson:"

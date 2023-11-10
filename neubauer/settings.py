@@ -127,7 +127,6 @@ INSTALLED_APPS = (
     'spacer',
     'djangocms_link',
     'djangocms_picture',
-
     'hero',
     'card',
     'contact',
@@ -135,12 +134,11 @@ INSTALLED_APPS = (
     'mailform',
     'team',
     'formappointment',
-
+    'infobox',
     # 'djangocms_googlemap',
     # 'djangocms_inherit',
     # 'djangocms_column',
     # 'djangocms_snippet',
-
 )
 
 TEMPLATES = [

@@ -12,15 +12,3 @@ class InfoBoxPlugin(CMSPluginBase):
     model = InfoBox
     name = _("Information Box")
     render_template = "infobox.html"
-
-    # def render(self, context, instance, placeholder):
-    #     object_list = News.objects.get_latest(instance.max_articles)
-
-    #     context.update(
-    #         {
-    #             "instance": instance,
-    #             "object_list": object_list,
-    #             "placeholder": placeholder,
-    #         }
-    #     )
-    #     return context

@@ -615,3 +615,33 @@ a.card {
     }
 }
 
+// gallery-grid
+// ---------------------------------------------------------------------------
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 32px;
+    grid-row-gap: 0px;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-breakpoint-up(xl) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    figure:first-child {
+        @include media-breakpoint-up(md) {
+            margin-top: 64px;
+        }
+    }
+    figure:nth-child(3) {
+        @include media-breakpoint-up(lg) {
+            margin-top: 128px;
+        }
+    }
+
+}
+

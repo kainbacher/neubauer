@@ -1,0 +1,33 @@
+{% load cms_tags i18n thumbnail %}
+
+{% if instance.view == "grid" %}
+<section class="container">
+    <div class="py-3 py-sm-5">
+
+        <div class="gallery-grid">
+        {% for item in gallery %}
+            {% if item.image %}
+                {% if item.get_link %}
+                    <a href="{{ item.get_link }}">
+                {% endif %}
+
+                <figure class="polaroid-item">
+                    <img src="{% thumbnail item.image 800x0 crop upscale subject_location=item.image.subject_location %}"
+                        {% if item.title %}data-title="{{ item.title|striptags }}"
+                        alt="{{ item.title|striptags }}"{% endif %}
+                        class="img-fluid"
+                        loading="lazy"
+                    />
+                    <figcaption><p>{{ item.title }}</p></figcaption>
+                </figure>
+
+                {% if item.get_link %}
+                    </a>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        </div>
+
+    </div>
+</section>
+{% endif %}

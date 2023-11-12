@@ -135,6 +135,7 @@ INSTALLED_APPS = (
     'team',
     'formappointment',
     'infobox',
+    'gallery',
     # 'djangocms_googlemap',
     # 'djangocms_inherit',
     # 'djangocms_column',

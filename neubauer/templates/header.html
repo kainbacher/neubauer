@@ -3,19 +3,19 @@
     <div class="header" x-data="{ showApointmentBox: false }">
         <div class="container">
             <div class="row">
-                <div class="col-6 col-md-3 col-xl-2 col-xxl-3 pe-lg-4">
+                <div class="col-6 col-md-3 col-xxl-3 pe-lg-4">
                     <a class="navbar-brand" href="/" title="Dr. Georg Neubauer">
                         {% include 'logo.html' %}
                     </a>
                 </div>
-                <nav class="header-nav col-4 col-lg-6 col-xxl-7 d-none d-xl-flex">
+                <nav class="header-nav col-4 col-lg-7 col-xxl-7 d-none d-xl-flex">
                     <div class="collapse navbar-collapse d-flex justify-content-center" id="navbar-main">
                         <ul class="navbar-nav align-items-center d-flex flex-row">
                             {% show_menu 0 100 100 100 'nav-main.html' %}
                         </ul>
                     </div>
                 </nav>
-                <div class="col-6 offset-md-3 col-lg-2 offset-lg-0 d-flex justify-content-end">
+                <div class="col-6 offset-md-3 col-xl-2 offset-lg-3 offset-xl-0 d-flex justify-content-end">
                     <div class="d-flex justify-content-center align-items-center gap-1">
                         <button x-on:click="showApointmentBox = !showApointmentBox" class="btn btn-primary rounded-pill">
                             Termin <span class="d-none d-md-inline">vereinbaren</span>

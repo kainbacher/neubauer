@@ -10,14 +10,24 @@ class Gallery(CMSPlugin):
     """Gallery."""
 
     VIEW_CHOICES = (
-        ('grid', _('Grid Layout')),
+        ("grid", _("Grid Layout")),
         # ('slider', _('Slider')),
     )
     view = models.CharField(
         _("Gallery View"),
         choices=VIEW_CHOICES,
         default=VIEW_CHOICES[0][0],
-        max_length=50
+        max_length=50,
+    )
+    SORTING_CHOICES = (
+        ("numbers", _("By Numbers")),
+        ('random', _('Random')),
+    )
+    sorting = models.CharField(
+        _("Sorting"),
+        choices=SORTING_CHOICES,
+        default=SORTING_CHOICES[0][0],
+        max_length=50,
     )
 
     def copy_relations(self, oldinstance):
@@ -36,8 +46,8 @@ class Image(models.Model):
     """Image."""
 
     class Meta:
-        verbose_name = _('Image')
-        verbose_name_plural = _('Images')
+        verbose_name = _("Image")
+        verbose_name_plural = _("Images")
 
     image = FilerImageField(
         related_name="gallery_image",
@@ -45,11 +55,7 @@ class Image(models.Model):
         blank=True,
         null=True,
     )
-    position = models.PositiveIntegerField(
-        _('Position'),
-        blank=True,
-        null=True
-    )
+    position = models.PositiveIntegerField(_("Position"), blank=True, null=True)
     gallery = models.ForeignKey(
         Gallery,
         related_name="gallery",

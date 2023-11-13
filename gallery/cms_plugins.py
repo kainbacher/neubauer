@@ -30,7 +30,11 @@ class GalleryPlugin(CMSPluginBase):
     ]
 
     def render(self, context, instance, placeholder):
-        gallery = instance.gallery.all().order_by("position")
+
+        if instance.sorting == "numbers":
+            gallery = instance.gallery.all().order_by("position")
+        else:
+            gallery = instance.gallery.all().order_by("?")
 
         context.update(
             {

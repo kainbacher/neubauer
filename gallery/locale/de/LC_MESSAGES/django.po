@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-18 06:03+0200\n"
+"POT-Creation-Date: 2023-11-13 08:47+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,38 +18,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: cms_plugins.py:26
 msgid "Gallery"
 msgstr "Galerie"
 
-msgid "Title"
-msgstr "Titel"
+#: models.py:13
+msgid "Grid Layout"
+msgstr "Raster Darstellung"
 
-msgid "just for internal use"
-msgstr "wird derzeitig nicht ausgegeben"
-
-msgid "show thumbnails"
-msgstr "Kleine Vorschaubilder anzeigen"
-
-msgid "used on the gallery page"
-msgstr "wird z.B. auf der Galerie Seite verwendet"
-
-msgid "Slider"
-msgstr "Slider"
-
-msgid "List"
-msgstr "Liste"
-
+#: models.py:17
 msgid "Gallery View"
 msgstr "Darstellung"
 
+#: models.py:23
+msgid "By Numbers"
+msgstr "Nach Nummern"
+
+#: models.py:24
+msgid "Random"
+msgstr "Zufällig"
+
+#: models.py:27
+msgid "Sorting"
+msgstr "Sortierung"
+
+#: models.py:49
 msgid "Image"
 msgstr "Bild"
 
+#: models.py:50
 msgid "Images"
 msgstr "Bilder"
 
+#: models.py:58
 msgid "Position"
 msgstr "Position"
+
+#~ msgid "Title"
+#~ msgstr "Titel"
+
+#~ msgid "just for internal use"
+#~ msgstr "wird derzeitig nicht ausgegeben"
+
+#~ msgid "show thumbnails"
+#~ msgstr "Kleine Vorschaubilder anzeigen"
+
+#~ msgid "used on the gallery page"
+#~ msgstr "wird z.B. auf der Galerie Seite verwendet"
+
+#~ msgid "Slider"
+#~ msgstr "Slider"
+
+#~ msgid "List"
+#~ msgstr "Liste"
 
 #~ msgid "View"
 #~ msgstr "Ansicht"

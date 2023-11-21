@@ -13,8 +13,7 @@
 
                 <figure class="polaroid-item">
                     <img src="{% thumbnail item.image 800x0 crop upscale subject_location=item.image.subject_location %}"
-                        {% if item.title %}data-title="{{ item.title|striptags }}"
-                        alt="{{ item.title|striptags }}"{% endif %}
+                        alt="{{ item.image.default_alt_text }}"
                         class="img-fluid"
                         loading="lazy"
                     />

@@ -1,3 +1,3 @@
-Sitemap: https://www.my-domain.at/sitemap.xml
+Sitemap: https://www.dr-neubauer.at/sitemap.xml
 User-agent:*
 Disallow:

@@ -3,7 +3,7 @@ from django.core.mail import EmailMessage, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
-from captcha.fields import ReCaptchaField
+# from captcha.fields import ReCaptchaField
 
 
 class Formular(forms.Form):
@@ -20,8 +20,8 @@ class Formular(forms.Form):
             render_to_string("sender_email.txt", {
                 'data': self.cleaned_data,
             }),
-            settings.EMAIL_HOST_USER, # from
-            [receiver_email], # to
+            settings.EMAIL_HOST_USER,  # from
+            [receiver_email],  # to
             bcc=['roland@kainbacher.io'],
             headers={
                 'Reply-To': self.cleaned_data['email']
@@ -41,7 +41,7 @@ class Formular(forms.Form):
         email_message = EmailMultiAlternatives(
             instance.email_subject,
             "HTML",
-            settings.EMAIL_HOST_USER, # from
+            settings.EMAIL_HOST_USER,  # from
             [email_to],  # to
             bcc=['roland@kainbacher.io'],
             headers={

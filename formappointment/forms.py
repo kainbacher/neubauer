@@ -3,7 +3,8 @@ from django.core.mail import EmailMessage, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
-# from captcha.fields import ReCaptchaField
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV2Checkbox
 
 
 class Formular(forms.Form):
@@ -19,8 +20,8 @@ class Formular(forms.Form):
     already_customer = forms.BooleanField(required=False)
     information_channel = forms.CharField(required=True)
     data_protection = forms.BooleanField(required=True)
-
     # check1 = forms.CharField(widget=forms.HiddenInput())
+    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
 
     def send_notification_to_sender(self, receiver_email):
         email_message = EmailMessage(

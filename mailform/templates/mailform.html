@@ -138,12 +138,17 @@
                                         {{ form.content }}
                                     </div>
 
+                                    <div class="mb-1">
+                                        {{ form.captcha }}
+                                    </div>
+
                                     <div class="mb-1 form-check">
                                         {{ form.data_protection }}
                                         <label class="form-check-label" for="id_data_protection">
                                             Ich habe die <a href="/datenschutz/" title="Datenschutzerklärung">Datenschutzerklärung</a> gelesen und stimme zu.
                                         </label>
                                     </div>
+
                                     <div class="mb-1">
                                         <input id="btn_submit" type="submit" value="Empfehlung absenden" class="btn btn-primary rounded-pill">
                                     </div>

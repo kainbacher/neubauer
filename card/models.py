@@ -38,6 +38,7 @@ class Card(CMSPlugin):
         null=True,
         on_delete=models.SET_NULL,
     )
+
     TEMPLATE_CHOICES = (
         ('dynamic', _('Dynamic height')),
         ('flex', _('Flex height')),

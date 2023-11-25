@@ -14,7 +14,7 @@ class Formular(forms.Form):
     content = forms.CharField(required=False, widget=forms.Textarea())
     data_protection = forms.BooleanField(required=True)
     # check1 = forms.CharField(widget=forms.HiddenInput())
-    # captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
+    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
 
     def send_notification_to_sender(self, receiver_email):
         email_message = EmailMessage(

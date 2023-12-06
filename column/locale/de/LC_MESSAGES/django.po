@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-cms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 07:33+0200\n"
+"POT-Creation-Date: 2023-12-06 10:15+0100\n"
 "PO-Revision-Date: 2014-02-06 13:31+0000\n"
 "Last-Translator: Patrick Lauber <patrick.lauber@divio.ch>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/django-cms/"
@@ -21,233 +21,239 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cms_plugins.py:12 cms_plugins.py:13 cms_plugins.py:38
+#: cms_plugins.py:11 cms_plugins.py:12 cms_plugins.py:20
 msgid "Multi Columns"
 msgstr "Zeile"
 
-#: cms_plugins.py:39
+#: cms_plugins.py:21
 msgid "Column"
 msgstr "Spalte"
 
-#: forms.py:24
-msgid "Create Columns"
-msgstr "Erstelle Spalten"
-
-#: forms.py:25
-msgid "Create this number of columns"
-msgstr "Erstelle diese Anzahl Spalten"
-
-#: forms.py:29
-msgid "Column width"
-msgstr "Spaltenbreite"
-
-#: forms.py:31
-msgid ""
-"Width of created columns. You can still change the width of the column "
-"afterwards."
-msgstr ""
-
-#: models.py:10
+#: models.py:9
 msgid "auto cols"
 msgstr "auto Spaltenbreite"
 
-#: models.py:11
+#: models.py:10
 msgid "8%, 1 col"
 msgstr "8%, 1 Spalten"
 
-#: models.py:12
+#: models.py:11
 msgid "16%, 2 cols"
 msgstr "16%, 2 Spalten"
 
-#: models.py:13
+#: models.py:12
 msgid "25%, 3 cols"
 msgstr "25%, 3 Spalten"
 
-#: models.py:14
+#: models.py:13
 msgid "33,3%, 4 col"
 msgstr "33,3%, 4 Spalten"
 
-#: models.py:15
+#: models.py:14
 msgid "42%, 5 cols"
 msgstr "42%, 5 Spalten"
 
-#: models.py:16
+#: models.py:15
 msgid "50%, 6 cols"
 msgstr "50%, 6 Spalten"
 
-#: models.py:17
+#: models.py:16
 msgid "58%, 7 cols"
 msgstr "58%, 7 Spalten"
 
-#: models.py:18
+#: models.py:17
 msgid "66%, 8 cols"
 msgstr "66%, 8 Spalten"
 
-#: models.py:19
+#: models.py:18
 msgid "75%, 9 cols"
 msgstr "75%, 9 Spalten"
 
-#: models.py:20
+#: models.py:19
 msgid "84%, 10 cols"
 msgstr "84%, 10 Spalten"
 
-#: models.py:21
+#: models.py:20
 msgid "92%, 11 cols"
 msgstr "92%, 11 Spalten"
 
-#: models.py:22
+#: models.py:21
 msgid "100%, 12 cols"
 msgstr "100%, 12 Spalten"
 
-#: models.py:26
+#: models.py:25
 msgid "white"
 msgstr "weiß"
 
-#: models.py:31 models.py:46 models.py:61
+#: models.py:26
+msgid "cyan"
+msgstr ""
+
+#: models.py:30 models.py:39 models.py:54 models.py:69
 msgid "0"
 msgstr ""
 
-#: models.py:32 models.py:47 models.py:62
+#: models.py:31 models.py:40 models.py:55 models.py:70
 msgid "1"
 msgstr ""
 
-#: models.py:33 models.py:48 models.py:63
+#: models.py:32 models.py:41 models.py:56 models.py:71
 msgid "2"
 msgstr ""
 
-#: models.py:34 models.py:49 models.py:64
+#: models.py:33 models.py:42 models.py:57 models.py:72
 msgid "3"
 msgstr ""
 
-#: models.py:35 models.py:50 models.py:65
+#: models.py:34 models.py:43 models.py:58 models.py:73
 msgid "4"
 msgstr ""
 
-#: models.py:36 models.py:51 models.py:66
+#: models.py:35 models.py:44 models.py:59 models.py:74
 msgid "5"
 msgstr ""
 
-#: models.py:37 models.py:52 models.py:67
+#: models.py:45 models.py:60 models.py:75
 msgid "6"
 msgstr ""
 
-#: models.py:38 models.py:53 models.py:68
+#: models.py:46 models.py:61 models.py:76
 msgid "7"
 msgstr ""
 
-#: models.py:39 models.py:54 models.py:69
+#: models.py:47 models.py:62 models.py:77
 msgid "8"
 msgstr ""
 
-#: models.py:40 models.py:55 models.py:70
+#: models.py:48 models.py:63 models.py:78
 msgid "9"
 msgstr ""
 
-#: models.py:41 models.py:56 models.py:71
+#: models.py:49 models.py:64 models.py:79
 msgid "10"
 msgstr "10"
 
-#: models.py:45
+#: models.py:53
 msgid "not set"
 msgstr "ohne"
 
-#: models.py:57
+#: models.py:65
 msgid "11"
 msgstr ""
 
-#: models.py:87
+#: models.py:95
 msgid "background color"
 msgstr "Hintergurndfarbe"
 
-#: models.py:93
+#: models.py:101
 msgid "padding"
 msgstr "Vertikaler Abstand"
 
-#: models.py:99
+#: models.py:106
 msgid "fluid"
 msgstr "Dynamische Breite"
 
-#: models.py:103
+#: models.py:107
 msgid "gutters"
 msgstr "Spaltenabstand"
 
-#: models.py:107
+#: models.py:109
 msgid "Anchor Id"
 msgstr "Anker Id"
 
-#: models.py:110
+#: models.py:112
 msgid "unique id to create a anchor to this point"
 msgstr "Seitenweite-Eindeutige Id, für Anker"
 
-#: models.py:115
+#: models.py:117
 #, python-format
 msgid "%s columns"
 msgstr "%s Spalten"
 
-#: models.py:124
+#: models.py:125
 msgid "vertical centered"
 msgstr "vertikal zentrieren"
+
+#: models.py:126
+#, fuzzy
+#| msgid "hover box"
+msgid "show box"
+msgstr "Grauer Hintergrund bei hover"
 
 #: models.py:128
 msgid "width md"
 msgstr "Breite md"
 
-#: models.py:134
+#: models.py:131
 msgid "offset md"
 msgstr "Einrückung md"
 
-#: models.py:140
+#: models.py:137
 msgid "width lg"
 msgstr "Breite lg"
 
-#: models.py:146
+#: models.py:140
 msgid "offset lg"
 msgstr "Einrückung lg"
 
-#: models.py:152
+#: models.py:146
 msgid "width xl"
 msgstr "Breite xl"
 
-#: models.py:158
+#: models.py:149
 msgid "offset xl"
 msgstr "Einrückung xl"
 
-#: models.py:164
+#: models.py:155
 msgid "width xxl"
 msgstr "Breite xxl"
 
-#: models.py:170
+#: models.py:161
 msgid "offset xxl"
 msgstr "Einrückung xxl"
 
-#: models.py:177
+#: models.py:168
 msgid "order"
 msgstr "Reihenfolge"
 
-#: models.py:183
+#: models.py:171
 msgid "order md"
 msgstr "Reihenfolge md"
 
-#: models.py:189
+#: models.py:174
 msgid "order lg"
 msgstr "Reihenfolge lg"
 
-#: models.py:195
+#: models.py:177
 msgid "order xl"
 msgstr "Reihenfolge xl"
 
-#: models.py:201
+#: models.py:180
 msgid "order xxl"
 msgstr "Reihenfolge xxl"
+
+#: models.py:186
+msgid "margin top"
+msgstr "Abstand oben"
+
+#: models.py:192
+msgid "margin bottom"
+msgstr "Abstand unten"
+
+#~ msgid "Create Columns"
+#~ msgstr "Erstelle Spalten"
+
+#~ msgid "Create this number of columns"
+#~ msgstr "Erstelle diese Anzahl Spalten"
+
+#~ msgid "Column width"
+#~ msgstr "Spaltenbreite"
 
 #~ msgid "66%, 8 cols, centered"
 #~ msgstr "66%, 8 Spalten, zentriert"
 
 #~ msgid "light gray"
 #~ msgstr "hellgrau"
-
-#~ msgid "hover box"
-#~ msgstr "Grauer Hintergrund bei hover"
 
 #~ msgid "orange"
 #~ msgstr "orange"

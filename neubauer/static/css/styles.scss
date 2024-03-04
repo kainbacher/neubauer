@@ -683,3 +683,45 @@ a.card {
     }
 }
 
+// whatsapp
+// ---------------------------------------------------------------------------
+
+.whatsapp {
+    @include ease;
+    align-items: center;
+    background: $red;
+    border-radius: 120px;
+    bottom: 16px;
+    color: $white;
+    display: flex;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 8px;
+    position: fixed;
+    right: 16px;
+    text-decoration: none;
+    z-index: 10;
+
+    span {
+        @include ease;
+        display: block;
+        height: 44px;
+        overflow: hidden;
+        width: 0;
+
+    }
+
+    &:hover {
+        color: $white;
+
+        span {
+            height: 44px;
+            padding-left: 8px;
+            padding-right: 8px;
+            width: 0;
+            width: auto;
+        }
+    }
+
+
+}

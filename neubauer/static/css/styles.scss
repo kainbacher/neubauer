@@ -694,7 +694,7 @@ a.card {
     bottom: 16px;
     color: $white;
     display: flex;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
     padding: 8px;
     position: fixed;
@@ -702,13 +702,21 @@ a.card {
     text-decoration: none;
     z-index: 10;
 
+    @include media-breakpoint-up(lg) {
+        font-size: 22px;
+    }
+
     span {
         @include ease;
-        display: block;
-        height: 44px;
+        align-items: center;
+        display: flex;
+        height: 32px;
         overflow: hidden;
         width: 0;
 
+        @include media-breakpoint-up(lg) {
+            height: 44px;
+        }
     }
 
     &:hover {

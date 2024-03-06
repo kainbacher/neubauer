@@ -4,7 +4,8 @@ from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from captcha.fields import ReCaptchaField
-from captcha.widgets import ReCaptchaV2Checkbox
+# from captcha.widgets import ReCaptchaV2Checkbox
+from captcha.widgets import ReCaptchaV3
 
 
 class Formular(forms.Form):
@@ -21,7 +22,14 @@ class Formular(forms.Form):
     information_channel = forms.CharField(required=True)
     data_protection = forms.BooleanField(required=True)
     # check1 = forms.CharField(widget=forms.HiddenInput())
-    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
+    # captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
+    captcha = ReCaptchaField(
+        widget=ReCaptchaV3(
+            attrs={
+                'required_score': 0.85,
+            }
+        )
+    )
 
     def send_notification_to_sender(self, receiver_email):
         email_message = EmailMessage(

@@ -16,7 +16,7 @@ class Formular(forms.Form):
     data_protection = forms.BooleanField(required=True)
     # check1 = forms.CharField(widget=forms.HiddenInput())
     # captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
-    captcha = ReCaptchaField(
+    captcha1 = ReCaptchaField(
         widget=ReCaptchaV3(
             attrs={
                 "required_score": 0.85,

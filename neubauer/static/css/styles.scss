@@ -691,14 +691,14 @@ a.card {
     align-items: center;
     background: $red;
     border-radius: 120px;
-    bottom: 84px;
+    bottom: 16px;
     color: $white;
     display: flex;
     font-size: 18px;
     font-weight: bold;
     padding: 8px;
     position: fixed;
-    right: 4px;
+    right: 19px;
     text-decoration: none;
     z-index: 10;
 
@@ -730,6 +730,10 @@ a.card {
             width: auto;
         }
     }
+}
 
-
+// recaptcha
+// ---------------------------------------------------------------------------
+.grecaptcha-badge {
+    display: none;
 }

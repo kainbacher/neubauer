@@ -12,6 +12,10 @@ class Badge(CMSPlugin):
         verbose_name = _('Badge')
         verbose_name_plural = _('Badge')
 
+    is_visible = models.BooleanField(
+        _('Is visible'),
+        default=True,
+    )
     title = models.CharField(
         _('Title H1'),
         max_length=255,

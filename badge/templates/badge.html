@@ -1,5 +1,6 @@
 {% load cms_tags i18n thumbnail static %}
 
+{% if instance.is_visible %}
 <a href="{{ instance.get_link }}" title="{{ instance.title }}" class="badge-job">
     <div class="badge-job-icon">
         <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,3 +17,4 @@
         {% endif %}
     </div>
 </a>
+{% endif %}

@@ -3,7 +3,7 @@
     <div class="header" x-data="{ showApointmentBox: false }">
         <div class="container">
             <div class="row">
-                <div class="col-6 col-md-3 col-xxl-3 pe-lg-4">
+                <div class="col-7 col-md-3 col-xxl-3 pe-lg-4">
                     <a class="navbar-brand" href="/" title="Dr. Georg Neubauer">
                         {% include 'logo.html' %}
                     </a>
@@ -15,10 +15,11 @@
                         </ul>
                     </div>
                 </nav>
-                <div class="col-6 offset-md-3 col-xl-2 offset-lg-3 offset-xl-0 d-flex justify-content-end">
+                <div class="col-5 offset-md-3 col-xl-2 offset-lg-3 offset-xl-0 d-flex justify-content-end">
                     <div class="d-flex justify-content-center align-items-center gap-1">
                         <button x-on:click="showApointmentBox = !showApointmentBox" class="btn btn-primary rounded-pill">
-                            Termin <span class="d-none d-md-inline">vereinbaren</span>
+                            <svg class="d-inline d-md-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm12-4v4M8 3v4m-4 4h16m-9.995 3h.01m3.99 0h.01"/><path d="M10.005 17a3.5 3.5 0 0 0 4 0"/></g></svg>                            
+                            <span class="d-none d-md-inline">Termin vereinbaren</span>
                         </button>
                         <button x-on:click="showMobileNav = !showMobileNav" class="btn btn-primary rounded-pill d-flex align-items-center d-lg-none">
                             {% comment %} Hamburger {% endcomment %}
